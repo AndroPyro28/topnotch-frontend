@@ -102,7 +102,7 @@ export const FormInputsContainer = styled.div`
       border: solid 2px #eaeaea;
       border-radius: 5px;
       outline: none;
-      width: 100%;
+      width: 90%;
       &:focus {
         border-color: gray;
       }
