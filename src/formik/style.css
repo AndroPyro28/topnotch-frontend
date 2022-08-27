@@ -1,0 +1,14 @@
+/* .input__field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+*/
+
+.error__message {
+    color: maroon;
+    font-size: 0.9em;
+}
+textarea {
+    resize: none;
+}
