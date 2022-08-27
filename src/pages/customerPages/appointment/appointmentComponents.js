@@ -97,7 +97,7 @@ export const FormInputsContainer = styled.div`
         text-align: start;
     }
 
-    & > .input, & > select, & > input{
+    & > .input, & > select, & > input[type^=date] {
       padding: 10px;
       border: solid 2px #eaeaea;
       border-radius: 5px;
