@@ -6,7 +6,7 @@ body {
 }
 
     .appointment__form__container {
-    width:80%;
+        width:80%;
     margin-top: 175px !important;
     margin-bottom: 55px !important;
     display: flex;
@@ -20,7 +20,7 @@ body {
     -webkit-box-shadow: -2px -1px 31px -8px rgba(66,66,66,0.75);
     -moz-box-shadow: -2px -1px 31px -8px rgba(66,66,66,0.75);
     @media (max-width:660px) {
-      width: 100%;
+      width: 95%;
     }
     }
 `;
@@ -83,7 +83,8 @@ export const FormInputsContainer = styled.div`
 
   @media (max-width:660px) {
     flex-direction: column;
-    width: 95%;
+  width: 90%;
+
   }
 
   & > .input__container {
@@ -96,7 +97,7 @@ export const FormInputsContainer = styled.div`
         text-align: start;
     }
 
-    & > .input {
+    & > .input, & > input {
       padding: 10px;
       border: solid 2px #eaeaea;
       border-radius: 5px;
