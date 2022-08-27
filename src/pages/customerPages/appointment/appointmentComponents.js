@@ -92,7 +92,7 @@ export const FormInputsContainer = styled.div`
     margin: 10px;
     display: flex;
     flex-direction: column;
-
+    width: 100%;
     & > label {
         text-align: start;
     }
