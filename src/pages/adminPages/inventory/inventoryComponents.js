@@ -338,9 +338,9 @@ export const ImageContainer = styled.div`
     cursor: pointer;
 
     @media (max-width:800px) {
-      top: 10px;
-      width: 75%;
-      height: 37%;
+      top: 5px;
+      width: 70%;
+      height: 40%;
     }
 
   }
