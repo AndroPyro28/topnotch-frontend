@@ -328,9 +328,9 @@ export const ImageContainer = styled.div`
 
   & > .imgUploader {
     position: absolute;
-    top: 70px;
+    top: 72px;
     left: 20;
-    width: 82%;
+    width: 84%;
     opacity: 0;
     opacity: 1;
     height: 32%;
