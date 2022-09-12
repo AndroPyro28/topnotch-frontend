@@ -330,10 +330,10 @@ export const ImageContainer = styled.div`
     position: absolute;
     top: 70px;
     left: 20;
-    width: 80%;
+    width: 82%;
     opacity: 0;
     opacity: 1;
-    height: 30%;
+    height: 32%;
     background: black;
     cursor: pointer;
 
