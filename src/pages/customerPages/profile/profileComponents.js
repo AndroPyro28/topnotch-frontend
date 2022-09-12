@@ -11,7 +11,7 @@ export const ProfilePageContainer = styled.section`
     position: relative;
     /* right: 50px; */
     top: 20px;
-    /* margin-inline: 50px; */
+    margin-inline: 30px;
     font-size: 1.5em;
     padding: 15px;
     border-radius: 50%;
