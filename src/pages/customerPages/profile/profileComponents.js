@@ -9,7 +9,7 @@ export const ProfilePageContainer = styled.section`
   position: relative;
   & > i {
     position: relative;
-    right: 10px;
+    right: 50px;
     top: 20px;
     font-size: 1.5em;
     padding: 15px;
