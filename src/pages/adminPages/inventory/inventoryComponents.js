@@ -332,7 +332,6 @@ export const ImageContainer = styled.div`
     left: 20;
     width: 84%;
     opacity: 0;
-    opacity: 1;
     height: 32%;
     background: black;
     cursor: pointer;
