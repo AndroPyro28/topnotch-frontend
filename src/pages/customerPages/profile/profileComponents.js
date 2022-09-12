@@ -16,6 +16,7 @@ export const ProfilePageContainer = styled.section`
     border-radius: 50%;
     transition: all 0.3s ease;
     cursor: pointer;
+    width: fit-content;
     &:hover {
       background: gray;
     }
