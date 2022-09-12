@@ -339,8 +339,8 @@ export const ImageContainer = styled.div`
 
     @media (max-width:800px) {
       top: 10px;
-     width: 80%;
-      height: 34%;
+      width: 75%;
+      height: 37%;
     }
 
   }
