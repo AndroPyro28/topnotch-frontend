@@ -66,8 +66,6 @@ function Appointment() {
       onSubmit={onSubmit}
     >
       {(formik) => {
-        const appointmentType = formik.values.appointmentType;
-        const liveStreamType = formik.values.liveStreamType;
         return (
           <Form class="appointment__form__container" autoComplete="off">
             <AppointmentFormPhoto></AppointmentFormPhoto>
