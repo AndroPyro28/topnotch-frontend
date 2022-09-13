@@ -223,6 +223,24 @@ export const TableRow = styled.div`
     @media (max-width:850px) {
       flex: 1;
     }
+
+    @media (max-width:750px) {
+      &.table__productAge {
+        display: none;
+      }
+    }
+
+    @media (max-width:650px) {
+      &.table__petType {
+        display: none;
+      }
+    }
+
+    @media (max-width:550px) {
+      &.table__productAge {
+        display: none;
+      }
+    }
   }
 
   & > .table__image {
@@ -267,9 +285,9 @@ export const T_DATA = styled.div`
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  @media (max-width:760px) {
+  /* @media (max-width:760px) {
       font-size: 0.8em;
-    }
+    } */
   & > img {
     width: 50px;
     object-fit: contain;
