@@ -7,6 +7,7 @@ import Item from "./Item";
 import {useParams} from "react-router-dom";
 import OrderDetails from "./OrderDetails";
 import CustomAxios from "../../../customer hooks/CustomAxios";
+
 function PurchasedDetails() {
 
   const {reference} = useParams()
