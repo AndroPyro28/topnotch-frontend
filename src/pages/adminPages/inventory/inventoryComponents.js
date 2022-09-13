@@ -225,19 +225,19 @@ export const TableRow = styled.div`
     }
 
     @media (max-width:750px) {
-      &.table__productAge {
+      & > .table__productAge {
         display: none;
       }
     }
 
     @media (max-width:650px) {
-      &.table__petType {
+      & > .table__petType {
         display: none;
       }
     }
 
     @media (max-width:550px) {
-      &.table__productAge {
+      & > .table__productAge {
         display: none;
       }
     }
