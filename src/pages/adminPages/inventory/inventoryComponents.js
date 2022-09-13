@@ -204,6 +204,24 @@ export const TableRow = styled.div`
   display: flex;
   align-items: center;
 
+  @media (max-width:750px) {
+      & > .table__productAge {
+        display: none;
+      }
+    }
+
+    @media (max-width:650px) {
+      & > .table__petType {
+        display: none;
+      }
+    }
+
+    @media (max-width:550px) {
+      & > .table__productAge {
+        display: none;
+      }
+    }
+
   & > div {
     flex: 1;
   }
@@ -224,23 +242,7 @@ export const TableRow = styled.div`
       flex: 1;
     }
 
-    @media (max-width:750px) {
-      & > .table__productAge {
-        display: none;
-      }
-    }
-
-    @media (max-width:650px) {
-      & > .table__petType {
-        display: none;
-      }
-    }
-
-    @media (max-width:550px) {
-      & > .table__productAge {
-        display: none;
-      }
-    }
+    
   }
 
   & > .table__image {
