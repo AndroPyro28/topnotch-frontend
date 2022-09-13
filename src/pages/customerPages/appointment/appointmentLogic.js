@@ -1,11 +1,11 @@
 import * as yup from "yup";
 import {useNavigate} from "react-router-dom";
 import CustomAxios from "../../../customer hooks/CustomAxios";
-import { useState } from "react";
 
 function AppointmentLogic({toast, image, setImgError, setLoading}) {
 
   const navigate = useNavigate();
+
   const onSubmit = async (values) => {
     try {
       values.image = image;

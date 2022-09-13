@@ -7,9 +7,13 @@ import {
   AppointmentFormInputsContainer,
   FormInputsContainer,
 } from "./appointmentComponents";
+
+
 import { toast, ToastContainer } from "react-toastify";
 import FormikControl from "../../../formik/FormikControl";
 import Loader from "../../../components/loader/Loader"
+
+
 function Appointment() {
   const [image, setImage] = useState(null);
   const [imgError, setImgError] = useState("");
@@ -53,7 +57,7 @@ function Appointment() {
     scheduledDate.min = `${dateTodayFormatter()}T00:00:00`;
   }, []);
 
-  if(loading) return <Loader bg={"0, 0, 0, 0.548"} />
+  if(loading) return <Loader bg={"rgba(0, 0, 0, 0.548)"} />
 
   return (
     <Formik
