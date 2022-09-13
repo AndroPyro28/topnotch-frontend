@@ -57,8 +57,6 @@ function Appointment() {
     scheduledDate.min = `${dateTodayFormatter()}T00:00:00`;
   }, []);
 
-  if(loading) return <Loader bg={"rgba(0, 0, 0, 0.548)"} />
-
   return (
     <Formik
       initialValues={initialValues}
@@ -70,6 +68,9 @@ function Appointment() {
           <Form class="appointment__form__container" autoComplete="off">
             <AppointmentFormPhoto></AppointmentFormPhoto>
             <GlobalStyles />
+            {
+              loading && <Loader bg={"rgba(0, 0, 0, 0.548)"} />
+            }
             <ToastContainer autoClose={1500} />
             <AppointmentFormInputsContainer>
               <h2>
