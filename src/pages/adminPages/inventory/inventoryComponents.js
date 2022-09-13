@@ -222,6 +222,12 @@ export const TableRow = styled.div`
       }
     }
 
+    @media (max-width:500px) {
+      & > .table__productStock {
+        display: none;
+      }
+    }
+
   & > div {
     flex: 1;
   }
