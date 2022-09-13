@@ -6,8 +6,6 @@ import {
 import Item from "./Item";
 import {useParams} from "react-router-dom";
 import OrderDetails from "./OrderDetails";
-import axios from "axios";
-import Cookies from "js-cookie"
 import CustomAxios from "../../../customer hooks/CustomAxios";
 function PurchasedDetails() {
 
