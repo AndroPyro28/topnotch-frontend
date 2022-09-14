@@ -23,6 +23,7 @@ import {
 } from "chart.js";
 import { useEffect } from "react";
 import CustomAxios from "../../customer hooks/CustomAxios";
+import { useState } from "react";
 
 ChartJS.register(
   CategoryScale,
@@ -85,7 +86,7 @@ function DashboardCharts() {
     "November",
     "December",
   ];
-
+  const [salesData, setSalesData] = useState([]);
   useEffect(() => {
     (async() => {
       const result = await CustomAxios({METHOD:"GET", uri:"/api/admin/dashboard"});
@@ -100,8 +101,8 @@ function DashboardCharts() {
         // console.log(`${sale} : ${data[sale]}`)
         salesArr[sale] = data[sale];
       }
-      
-      console.log(salesArr);
+
+      setSalesData(salesArr)
     })()
   }, [])
 
@@ -115,13 +116,13 @@ function DashboardCharts() {
          label: "",
         borderColor: "gray",
         backgroundColor:"white",
-        data: [112, 123, 532, 122, 222, 333, 666, 123, 321],
+        data: salesData,
       },
       {
         type: "bar",
          label: "",
         backgroundColor: "#a6b7f1",
-        data: [112, 123, 532, 122, 222, 333, 666, 123, 321],
+        data: salesData,
         borderColor: "white",
         borderWidth: 2,
         borderRadius:100
