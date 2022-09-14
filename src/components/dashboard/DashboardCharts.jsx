@@ -71,13 +71,6 @@ const salesChartOption = {
 
 function DashboardCharts() {
 
-  useEffect(() => {
-    (async() => {
-      const result = await CustomAxios({METHOD:"GET", uri:"/api/admin/dashboard"});
-      console.log(result);
-    })()
-  }, [])
-
   const labels = [
     "January",
     "February",
@@ -92,6 +85,20 @@ function DashboardCharts() {
     "November",
     "December",
   ];
+
+  useEffect(() => {
+    (async() => {
+      const result = await CustomAxios({METHOD:"GET", uri:"/api/admin/dashboard"});
+      const salesArr = new Array(12);
+
+      for (const data in result) {
+        console.log(data)
+      }
+      
+    })()
+  }, [])
+
+
   
   const data = {
     labels,
