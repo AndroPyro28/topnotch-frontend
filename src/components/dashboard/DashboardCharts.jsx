@@ -67,53 +67,55 @@ const salesChartOption = {
   maintainAspectRatio: false,
 };
 
-const rawData = [123, 139, 322, 25, 32, 13, 12, 3, 23, 1, 23, 21];
-const total = rawData.reduce((total, current) => total + current, 0);
-const labels = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
 
-const data = {
-  labels,
-  datasets: [
-    {
-      type: "line",
-       label: "",
-      borderColor: "gray",
-      backgroundColor:"white",
-      data: [112, 123, 532, 122, 222, 333, 666, 123, 321],
-    },
-    {
-      type: "bar",
-       label: "",
-      backgroundColor: "#a6b7f1",
-      data: [112, 123, 532, 122, 222, 333, 666, 123, 321],
-      borderColor: "white",
-      borderWidth: 2,
-      borderRadius:100
-    },
-  ],
-};
 
 function DashboardCharts() {
 
   useEffect(() => {
     (async() => {
       const result = await CustomAxios({METHOD:"GET", uri:"/api/admin/dashboard"});
-      // console.log(result)
+      console.log(result);
     })()
   }, [])
+
+  const labels = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  
+  const data = {
+    labels,
+    datasets: [
+      {
+        type: "line",
+         label: "",
+        borderColor: "gray",
+        backgroundColor:"white",
+        data: [112, 123, 532, 122, 222, 333, 666, 123, 321],
+      },
+      {
+        type: "bar",
+         label: "",
+        backgroundColor: "#a6b7f1",
+        data: [112, 123, 532, 122, 222, 333, 666, 123, 321],
+        borderColor: "white",
+        borderWidth: 2,
+        borderRadius:100
+      },
+    ],
+  };
+
+
   return (
     <DashboardChartsContainer>
       <MonthlySalesChartsContainer>
