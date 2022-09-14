@@ -90,9 +90,14 @@ function DashboardCharts() {
     (async() => {
       const result = await CustomAxios({METHOD:"GET", uri:"/api/admin/dashboard"});
       const salesArr = new Array(12);
+      const {data, success, msg} = result;
 
-      for (const data in result.data) {
-        console.log(data)
+      if(!success && msg?.includes("session expired")) {
+        return window.location.reload();
+      }
+
+      for (const sale in data) {
+        console.log(`${sale} : ${data[sale]}`)
       }
 
     })()
