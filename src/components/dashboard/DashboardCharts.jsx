@@ -91,10 +91,10 @@ function DashboardCharts() {
       const result = await CustomAxios({METHOD:"GET", uri:"/api/admin/dashboard"});
       const salesArr = new Array(12);
 
-      for (const data in result) {
+      for (const data in result.data) {
         console.log(data)
       }
-      
+
     })()
   }, [])
 
