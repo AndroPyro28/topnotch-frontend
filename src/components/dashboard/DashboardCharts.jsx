@@ -97,9 +97,11 @@ function DashboardCharts() {
       }
 
       for (const sale in data) {
-        console.log(`${sale} : ${data[sale]}`)
+        // console.log(`${sale} : ${data[sale]}`)
+        salesArr[sale] = data[sale];
       }
-
+      
+      console.log(salesArr);
     })()
   }, [])
 
