@@ -82,7 +82,6 @@ export const InventoryRightContent = styled.div`
   width: 80%;
   margin: 10px;
   border-radius: 10px;
-  height: 85vh;
 
   @media (max-width:1200px) {
     width: 100%;
