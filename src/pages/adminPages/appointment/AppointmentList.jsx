@@ -14,7 +14,7 @@ import CustomAxios from "../../../customer hooks/CustomAxios";
 function AppointmentList() {
   const [appointments, setAppointments] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState("pending");
+  const [status, setStatus] = useState("all");
   const [currentPage, setCurrentPage] = useState(0);
   const [maxPage, setMaxPage] = useState(0);
   const { dateNtimeFormatter, sortDataByShift } = Logic({ setAppointments });
