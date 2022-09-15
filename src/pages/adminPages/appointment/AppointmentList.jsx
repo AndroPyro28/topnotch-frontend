@@ -125,7 +125,7 @@ function AppointmentList() {
           fetchAppointments
         ) : (
           <h1 style={{ color: "gray", textAlign: "center", marginBlock: 20 }}>
-            No appointments yet
+            No appointments found
           </h1>
         )}
       </AdminListContainer>
