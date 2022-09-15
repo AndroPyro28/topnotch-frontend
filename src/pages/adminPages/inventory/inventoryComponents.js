@@ -235,6 +235,7 @@ export const TableRow = styled.div`
   &.table__header {
     padding: 15px 0;
     color: rgb(99, 98, 98);
+    margin-bottom: 20px;
   }
 
   &.table__data {
