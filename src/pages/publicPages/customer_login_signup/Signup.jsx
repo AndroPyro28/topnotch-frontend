@@ -23,7 +23,7 @@ function Signup() {
 
       const validatePhone = (phone) => {
         const phoneNo = phone.toString()
-        return !phoneNo.startsWith('639') ? "Phone number must start with (63) 9*********" : null
+        return !phoneNo.startsWith('639') ? "Phone number must start with (63) (e.g 639*********)" : null
       }
 
   const [inputPageNo, setInputPageNo] = useState(0);
