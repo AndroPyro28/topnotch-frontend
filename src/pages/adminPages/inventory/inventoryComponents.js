@@ -315,7 +315,7 @@ export const T_DATA = styled.div`
 export const ProductListContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height: 75vh;
+  height: 85vh;
   overflow: auto;
   overflow-x: hidden;
 `;
