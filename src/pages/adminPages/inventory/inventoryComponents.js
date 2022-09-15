@@ -73,7 +73,7 @@ export const ProductStatisticContainer = styled.div`
 
 export const ProductStatistic = styled.div`
   width: 100%;
-  height: 400px;
+  height: 450px;
 `;
 
 export const InventoryRightContent = styled.div`
