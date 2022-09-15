@@ -44,9 +44,9 @@ function Logic({ appointment, id, setData, toast, setAppointments}) {
   };
 
   const sortDataByShift = (shift, appointmentData) => {
-    if(shift === 'all') {
-      return appointmentData;
-    }
+    // if(shift === 'all') {
+    //   return appointmentData;
+    // }
     const shiftedData = appointmentData.filter(data => data.date_n_time.time.includes(shift))
     return shiftedData
   }
