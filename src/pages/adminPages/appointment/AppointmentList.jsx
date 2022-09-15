@@ -1,6 +1,4 @@
 import React, { useState, useEffect} from "react";
-import axios from "axios";
-import Cookies from "js-cookie";
 import {
   ShiftScheduleContainer,
   T_Head,
@@ -16,7 +14,7 @@ import CustomAxios from "../../../customer hooks/CustomAxios";
 function AppointmentList() {
   const [appointments, setAppointments] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState("all");
+  const [status, setStatus] = useState("pending");
   const [currentPage, setCurrentPage] = useState(0);
   const [maxPage, setMaxPage] = useState(0);
   const { dateNtimeFormatter, sortDataByShift } = Logic({ setAppointments });
