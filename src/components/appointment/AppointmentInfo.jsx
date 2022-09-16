@@ -104,6 +104,15 @@ function AppointmentInfo({ data, setData, }) {
           </button>
         </InfoRow>
       )}
+
+      {appointment?.status !== "pending" && appointment?.status !== "rejected" && (
+        <InfoRow style={{ justifyContent: "center" }}>
+          <button className="approve">
+            Approve
+          </button>
+        </InfoRow>
+      )}
+
     </AppointmentInfoContainer>
   );
 }

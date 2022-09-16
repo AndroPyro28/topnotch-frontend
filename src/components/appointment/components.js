@@ -37,18 +37,13 @@ export const InfoRow = styled.div`
     &.reject {
       background: red;
 
-      &:hover {
-      background: pink;
-
-      }
     }
     &.approve {
+      background: lightblue;
+    }
+
+    &.complete {
       background: green;
-
-      &:hover {
-      background: lightgreen;
-
-      }
     }
   }
 `;
