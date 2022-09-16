@@ -143,7 +143,7 @@ function Video({ setDisplayBoard, setDisplayBoardModal, displayBoard: displayBoa
   return (
     <VideoContainer isDisplayBoard={displayBoardData}>
       {
-        loading && <Loader bg={"rgba(0, 0, 0, 0.548)"}/>
+        loading &&<Loader bg={"rgba(0, 0, 0, 0.548);"} />
       }
       {isAdmin && <video playsInline muted ref={videoRef} autoPlay />}
 
@@ -178,7 +178,13 @@ function Video({ setDisplayBoard, setDisplayBoardModal, displayBoard: displayBoa
 
         <i
           className="fa-solid fa-right-from-bracket leave"
-          onClick={leaveLiveStream}
+          onClick={() => {
+            
+            if(isAdmin) {
+              setLoading(true)
+            }
+            leaveLiveStream();
+          }}
           disabled={disabledButton}
         ></i>
 
