@@ -5,6 +5,7 @@ import {
   InfoRow,
   UpdateBtn,
 } from "./components";
+
 import FormateDateLocal from "../../helpers/FormateDateLocal";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -105,7 +106,11 @@ function AppointmentInfo({ data, setData, }) {
         </InfoRow>
       )}
 
-      {appointment?.status !== "pending" && appointment?.status !== "rejected" && (
+      {
+      appointment?.status !== "pending" &&
+       appointment?.status !== "rejected" &&
+       appointment?.status !== "completed" &&
+      (
         <InfoRow style={{ justifyContent: "center" }}>
           <button className="approve">
             Approve
