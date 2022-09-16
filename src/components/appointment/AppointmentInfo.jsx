@@ -100,21 +100,18 @@ function AppointmentInfo({ data, setData, }) {
 
         <InfoRow>
           <Info>
-            <h4>Date N time of the event</h4>
-            <label>At {live_stream_data?.date} <br />
-            started at {live_stream_data?.start_time} <br />
-            end at{live_stream_data?.end_time}</label>
+            <h4>Time of the event</h4>
+            <label>
+            {live_stream_data?.start_time} - {live_stream_data?.end_time}</label>
           </Info>
         </InfoRow>
 
         <InfoRow>
           <Info>
-            <h4>Video Record</h4>
+            <h4>Record of the stream</h4>
             <video src={live_stream_data?.video} controls></video>
           </Info>
         </InfoRow>
-        
-
         </>
       }
 
