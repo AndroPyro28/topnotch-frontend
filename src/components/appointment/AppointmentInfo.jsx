@@ -91,7 +91,7 @@ function AppointmentInfo({ data, setData, }) {
 
 
       {
-        appointment?.status === "completed" && <>
+        appointment?.status === "completed" && appointment?.appointment_type === "grooming" && <>
         <InfoRow>
           <Info>
             <h2>Appointment summary</h2>
