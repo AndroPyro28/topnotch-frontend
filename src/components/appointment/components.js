@@ -64,6 +64,13 @@ export const Info = styled.div`
     font-size: 0.9em;
   }
 
+  & > video {
+    object-fit: contain;
+    width: 100%;
+    height: 300px;
+    border-radius:10px;
+  }
+
   & > span {
     color: #1e2429;
     font-size: 1em;
