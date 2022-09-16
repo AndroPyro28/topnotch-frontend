@@ -140,8 +140,8 @@ function AppointmentInfo({ data, setData, }) {
         appointment?.status !== "completed" &&
         (
           <InfoRow style={{ justifyContent: "center" }}>
-            <button className="approve">
-              Approve
+            <button className="complete">
+              Mark as completed
             </button>
           </InfoRow>
         )}
