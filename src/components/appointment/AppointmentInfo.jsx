@@ -89,6 +89,12 @@ function AppointmentInfo({ data, setData, }) {
         </Info>
       </InfoRow>
 
+      <InfoRow>
+        <Info status={`${appointment?.status}`}>
+          <h4>Status</h4>
+          <p>{appointment?.status}</p>
+        </Info>
+      </InfoRow>
 
       {
         appointment?.status === "completed" && appointment?.appointment_type === "grooming" && <>
@@ -116,12 +122,7 @@ function AppointmentInfo({ data, setData, }) {
       }
 
 
-      <InfoRow>
-        <Info status={`${appointment?.status}`}>
-          <h4>Status</h4>
-          <p>{appointment?.status}</p>
-        </Info>
-      </InfoRow>
+
 
       {appointment?.status === "pending" && (
         <InfoRow style={{ justifyContent: "center" }}>
