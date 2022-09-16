@@ -135,6 +135,7 @@ function AppointmentInfo({ data, setData, }) {
       )}
 
       {
+        appointment?.status &&
         appointment?.status !== "pending" &&
         appointment?.status !== "rejected" &&
         appointment?.status !== "completed" &&
