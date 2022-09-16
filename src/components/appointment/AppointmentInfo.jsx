@@ -95,7 +95,6 @@ function AppointmentInfo({ data, setData, }) {
         <InfoRow>
           <Info>
             <h2>Appointment summary</h2>
-            <label>{appointment?.additional_details}</label>
           </Info>
         </InfoRow>
 
