@@ -67,7 +67,7 @@ export const Info = styled.div`
   & > video {
     object-fit: contain;
     width: 100%;
-    height: 300px;
+    height: 250px;
     border-radius:10px;
   }
 
