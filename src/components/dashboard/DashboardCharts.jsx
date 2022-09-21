@@ -153,7 +153,7 @@ function DashboardCharts() {
         </DataContainer>
 
         <MonthlySalesChartsContainer>
-          {/* <h1>Monthly sales for year {new Date().getFullYear()}</h1> */}
+          { <h1>Monthly sales for year {new Date().getFullYear()}</h1> }
           <Chart
             data={data}
             options={salesChartOption}
