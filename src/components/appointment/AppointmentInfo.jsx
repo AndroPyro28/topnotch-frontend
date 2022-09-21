@@ -96,7 +96,6 @@ function AppointmentInfo({ data, setData, setLoading }) {
       </InfoRow>
 
       {
-        live_stream_data?.video &&
        appointment?.status === "completed" && 
        appointment?.appointment_type === "grooming" && 
        <>
@@ -115,7 +114,9 @@ function AppointmentInfo({ data, setData, setLoading }) {
         <InfoRow>
           <Info>
             <h4>Record of the stream</h4>
-            <video src={live_stream_data?.video} controls></video>
+            {
+              live_stream_data?.video ? <video src={live_stream_data?.video} controls></video> : <label>Video record stream not available</label>
+            }
           </Info>
         </InfoRow>
         </>
