@@ -23,9 +23,7 @@ function Record() {
         <NavLink to={'appointments'} style={navLinkStyles} >
           Appointments
         </NavLink>
-        <NavLink to={'sales'} style={navLinkStyles} >
-          Sales
-        </NavLink>
+        
       </ListNavigationButton>
 
       <Outlet />
