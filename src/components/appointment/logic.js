@@ -64,7 +64,8 @@ function Logic({ appointment, id, setData, toast, setAppointments}) {
   return {
     dateNtimeFormatter,
     approve,
-    sortDataByShift
+    sortDataByShift,
+    completeSchedule
   };
 }
 
