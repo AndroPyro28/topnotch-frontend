@@ -72,6 +72,8 @@ function Logic({ appointment, id, setData, toast, setAppointments}) {
       return toast(msg, {type:"success"});
     } catch (error) {
       console.error(error.message)
+      return toast(error.message, {type:"error"});
+
     }
   }
 
