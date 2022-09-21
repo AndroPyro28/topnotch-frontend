@@ -97,7 +97,6 @@ function AppointmentInfo({ data, setData, }) {
       </InfoRow>
 
       {
-       Object.values(live_stream_data)?.length > 0 && 
        appointment?.status === "completed" && 
        appointment?.appointment_type === "grooming" && 
        <>
