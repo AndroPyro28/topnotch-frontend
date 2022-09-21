@@ -160,7 +160,7 @@ border-radius: 10px;
 & > div:nth-child(1) {
     flex: 2;
     font-size: 1.3em;
-    background: rgb(255,231,147);
+    background: black;
 
     & > * {
         color: white;
