@@ -172,6 +172,7 @@ border-radius: 10px;
 
     & > span {
         font-size: 1.1em !important;
+        color: #a6b7f1;
     }
 
     & > p {
