@@ -13,13 +13,12 @@ import { useParams } from "react-router-dom";
 import Logic from "./logic";
 import { ToastContainer, toast } from "react-toastify";
 
-
 function AppointmentInfo({ data, setData, }) {
 
   const { appointment, live_stream_data } = data;
   const { id } = useParams();
 
-  const { approve } = Logic({ appointment, id, setData, toast });
+  const { approve, completeSchedule } = Logic({ appointment, id, setData, toast });
 
   let [formattedDateNTime, setFormattedDateNTime] = useState(null);
 
@@ -137,7 +136,7 @@ function AppointmentInfo({ data, setData, }) {
         appointment?.status !== "completed" &&
         (
           <InfoRow style={{ justifyContent: "center" }}>
-            <button className="complete">
+            <button className="complete" onClick={completeSchedule}>
               Mark as completed
             </button>
           </InfoRow>

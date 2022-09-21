@@ -51,6 +51,16 @@ function Logic({ appointment, id, setData, toast, setAppointments}) {
     return shiftedData
   }
 
+  const completeSchedule = async () => {
+    try {
+      const result = await CustomAxios({METHOD:"PATCH", uri:`/api/admin/markComplete/${id}`});
+
+      console.log(result)
+    } catch (error) {
+      console.error(error.message)
+    }
+  }
+
   return {
     dateNtimeFormatter,
     approve,
