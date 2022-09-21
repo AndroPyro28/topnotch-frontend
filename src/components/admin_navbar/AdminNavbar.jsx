@@ -74,11 +74,11 @@ function AdminNavbar() {
           <i className="fa-solid fa-chart-line"></i> Dashboard
         </NavLink>
 
-        <NavLink to="/admin/record/appointments">
+        <NavLink to="/admin/appointments">
           <i className="fa-solid fa-calendar-days"></i> Appointment
         </NavLink>
 
-        <NavLink to="/admin/record/sales">
+        <NavLink to="/admin/sales">
           <i className="fa-solid fa-chart-pie"></i> sales
         </NavLink>
 

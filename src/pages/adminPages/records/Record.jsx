@@ -14,6 +14,7 @@ function Record() {
             borderBottom: isActive ? 'solid 2px rgb(99, 98, 98)' : ''
         }
     }
+    
   return (
     <AdminListWrapper>
       <GlobalStyles />
