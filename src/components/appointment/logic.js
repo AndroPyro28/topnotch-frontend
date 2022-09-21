@@ -55,7 +55,21 @@ function Logic({ appointment, id, setData, toast, setAppointments}) {
     try {
       const result = await CustomAxios({METHOD:"PATCH", uri:`/api/admin/markComplete/${id}`});
 
-      console.log(result)
+      const {msg, success} = result;
+
+      if(msg?.includes("session expired") && !success) {
+        return window.location.reload();
+      }
+
+      setData((prev) => ({
+        ...prev,
+        appointment: {
+          ...prev.appointment,
+          status: 'completed',
+        },
+      }));
+
+      return toast(msg, {type:"success"});
     } catch (error) {
       console.error(error.message)
     }
