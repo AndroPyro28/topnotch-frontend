@@ -57,7 +57,6 @@ export const MonthlySalesChartsContainer = styled.div`
 
     & > h1 {
         text-align: start;
-        margin: 10px;
         @media (max-width:500px) {
             font-size: 1.2em;
         }
