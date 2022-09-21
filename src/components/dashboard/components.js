@@ -166,7 +166,7 @@ border-radius: 10px;
         color: white;
     }
     & > i {
-        color: lightgreen;
+        color: #a6b7f1;
         font-size: 0.9em !important;
     }
 
