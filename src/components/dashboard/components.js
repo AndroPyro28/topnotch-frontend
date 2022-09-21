@@ -34,7 +34,6 @@ export const DashboardChartsContainer = styled.section`
 export const MonthlySalesChartsContainer = styled.div`
     height: 300px;
     display: flex;
-    padding: 10px;
     padding: 10px 30px 30px 30px;
     border-radius: 10px;
     justify-content: center;
