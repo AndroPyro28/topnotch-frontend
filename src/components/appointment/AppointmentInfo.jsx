@@ -105,7 +105,6 @@ function AppointmentInfo({ data, setData, }) {
             <h2>Appointment summary</h2>
           </Info>
         </InfoRow>
-
         <InfoRow>
           <Info>
             <h4>Time of the event</h4>
@@ -113,7 +112,6 @@ function AppointmentInfo({ data, setData, }) {
             {live_stream_data?.start_time} - {live_stream_data?.end_time}</label>
           </Info>
         </InfoRow>
-
         <InfoRow>
           <Info>
             <h4>Record of the stream</h4>
