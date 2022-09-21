@@ -249,13 +249,9 @@ function App() {
         />
 
         <Route
-          path="/admin/record/"
-          element={<AdminRoutes Component={<Record />} />}
-        >
-          <Route index element={<AppointmentList />} />
-          <Route path="appointments" element={<AppointmentList />} />
-          <Route path="sales" element={<Sales />} />
-        </Route>
+          path="/admin/appointments/"
+          element={<AdminRoutes Component={<AppointmentList />} />}
+        />
 
         <Route
           path="/admin/orders"
