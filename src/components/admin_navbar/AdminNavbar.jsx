@@ -31,12 +31,12 @@ function AdminNavbar() {
           icon:'fa-solid fa-chart-line'
         },
         {
-          url:`/admin/record/appointments`,
+          url:`/admin/appointments`,
           name:"Appointments",
           icon:'fa-solid fa-calendar-days'
         },
         {
-          url:`/admin/record/sales`,
+          url:`/admin/sales`,
           name:"Sales",
           icon:'fa-solid fa-chart-pie'
         },
