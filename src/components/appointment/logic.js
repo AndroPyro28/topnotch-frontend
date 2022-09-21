@@ -1,6 +1,6 @@
 import CustomAxios from "../../customer hooks/CustomAxios";
 
-function Logic({ appointment, id, setData, toast, setAppointments}) {
+function Logic({ appointment, id, setData, toast, setAppointments, setLoading}) {
   const dateNtimeFormatter = (dateLocal) => {
     const date = new Date(dateLocal);
 
@@ -36,10 +36,12 @@ function Logic({ appointment, id, setData, toast, setAppointments}) {
         },
       }));
       toast("Appointment approved", { type: "success" });
+      setLoading(true)
       const response = await CustomAxios({METHOD:"PATCH", uri:`/api/admin/approveAppointment/${id}`, values:{appointment}})
-      
     } catch (error) {
       console.error(error.message);
+    } finally {
+      setLoading(false)
     }
   };
 
@@ -53,6 +55,7 @@ function Logic({ appointment, id, setData, toast, setAppointments}) {
 
   const completeSchedule = async () => {
     try {
+      setLoading(true)
       const result = await CustomAxios({METHOD:"PATCH", uri:`/api/admin/markComplete/${id}`});
 
       const {msg, success} = result;
@@ -74,6 +77,8 @@ function Logic({ appointment, id, setData, toast, setAppointments}) {
       console.error(error.message)
       return toast(error.message, {type:"error"});
 
+    } finally {
+      setLoading(false)
     }
   }
 
