@@ -97,7 +97,10 @@ function AppointmentInfo({ data, setData, }) {
       </InfoRow>
 
       {
-       Object.values(live_stream_data).length > 0 && appointment?.status === "completed" && appointment?.appointment_type === "grooming" && <>
+       Object.values(live_stream_data).length > 0 && 
+       appointment?.status === "completed" && 
+       appointment?.appointment_type === "grooming" && 
+       <>
         <InfoRow>
           <Info>
             <h2>Appointment summary</h2>
@@ -120,9 +123,6 @@ function AppointmentInfo({ data, setData, }) {
         </InfoRow>
         </>
       }
-
-
-
 
       {appointment?.status === "pending" && (
         <InfoRow style={{ justifyContent: "center" }}>
