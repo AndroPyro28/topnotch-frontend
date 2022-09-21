@@ -129,15 +129,15 @@ function DashboardCharts() {
         backgroundColor: "white",
         data: salesData,
       },
-      {
-        type: "bar",
-        label: "",
-        backgroundColor: "#a6b7f1",
-        data: salesData,
-        borderColor: "white",
-        borderWidth: 2,
-        borderRadius: 100
-      },
+      // {
+      //   type: "bar",
+      //   label: "",
+      //   backgroundColor: "#a6b7f1",
+      //   data: salesData,
+      //   borderColor: "white",
+      //   borderWidth: 2,
+      //   borderRadius: 100
+      // },
     ],
   };
 
