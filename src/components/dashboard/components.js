@@ -81,6 +81,7 @@ export const FeedbackList = styled.div`
     background:white;
     border-radius: 10px;
     max-height: 450px;
+    height: 450px;
     overflow: auto;
     position: relative;
     @media (max-width:1000px) {
