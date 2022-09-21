@@ -96,6 +96,7 @@ function AppointmentInfo({ data, setData, setLoading }) {
       </InfoRow>
 
       {
+        live_stream_data?.video &&
        appointment?.status === "completed" && 
        appointment?.appointment_type === "grooming" && 
        <>
