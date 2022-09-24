@@ -7,7 +7,7 @@ function AppointmentActivities() {
     (async () => {
       try {
         const result = await CustomAxios({METHOD:"GET", uri:"/api/customer/getAllAppointmentActivities"})
-        console.log('appointment...')
+        console.log('appointment...', result)
       } catch (error) {
         console.error(error.message)
       }

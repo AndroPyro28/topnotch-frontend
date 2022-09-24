@@ -9,7 +9,7 @@ function OrderActivities() {
     (async () => {
       try {
         const result = await CustomAxios({METHOD:"GET", uri:"/api/customer/getAllOrderActivities"})
-        console.log('orders...')
+        console.log('orders...', result)
       } catch (error) {
         console.error(error.message)
       }
