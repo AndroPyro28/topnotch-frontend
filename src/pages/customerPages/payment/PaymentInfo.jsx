@@ -96,26 +96,21 @@ function PaymentInfo() {
 
       <Line />
 
-      <TransactionNumber>Transaction ID: {transactionId}</TransactionNumber>
+      <TransactionNumber>Transaction ID: {JSON.parse(Cookies.get('onCheckoutProducts')).transactionId}</TransactionNumber>
 
       <PaymentData>
         <span>TOTAL AMOUNT PAID</span>
-        <strong>{productPriceFormatter(totalAmount)}</strong>
+        <strong>{productPriceFormatter(JSON.parse(Cookies.get('onCheckoutProducts')).totalAmount)}</strong>
       </PaymentData>
 
       <Line />
 
       <PaymentData>
         <span>payed by</span>
-        <strong>{paymentMethod}</strong>
+        <strong>{JSON.parse(Cookies.get('onCheckoutProducts')).paymentMethod}</strong>
       </PaymentData>
 
       <Line />
-
-      <PaymentData>
-        <span>transaction date</span>
-        <strong>{GetDateToday()}</strong>
-      </PaymentData>
 
       <ProceedButton onClick={() => navigate("/customer/cart")}>
         Proceed
