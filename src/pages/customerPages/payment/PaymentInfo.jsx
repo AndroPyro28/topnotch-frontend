@@ -68,7 +68,6 @@ function PaymentInfo() {
             toast(msg, { type: "error" });
             return window.location.reload();
           }
-
           toast(msg, { type: "success" });
       } catch (error) {
         console.error(error.message);
@@ -78,7 +77,7 @@ function PaymentInfo() {
     })();
   }, []);
 
-  if(loading) return <Loader bg={""}/>
+  if(loading) return <Loader bg="rgba(0,0,0,0.5)" />
 
   if (!loading && totalAmount == 0 || transactionId == null || paymentMethod == null) {
     return navigate("/customer/cart");
