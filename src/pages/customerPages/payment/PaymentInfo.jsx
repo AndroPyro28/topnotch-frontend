@@ -52,7 +52,6 @@ function PaymentInfo() {
           orderId,
           totalAmount,
         } = JSON.parse(Cookies.get('onCheckoutProducts'));
-          console.log(JSON.parse(Cookies.get('onCheckoutProducts')));
           setTotalAmount(totalAmount);
           setTransactionId(orderId);
           setPaymentMethod(method);
@@ -79,7 +78,7 @@ function PaymentInfo() {
 
   if(loading) return <Loader bg="rgba(0,0,0,0.5)" />
 
-  if (!loading && totalAmount == 0 || transactionId == null || paymentMethod == null) {
+  if (!JSON.parse(Cookies.get('onCheckoutProducts'))) {
     return navigate("/customer/cart");
   }
 
