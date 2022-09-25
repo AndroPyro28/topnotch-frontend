@@ -41,8 +41,9 @@ function PaymentInfo() {
         }
 
         if(checkoutInfo) {
+          const { method, orderId, totalAmount } = checkoutInfo
           const inFiveMinutes = new Date(new Date().getTime() + 15 * 60 * 1000);
-          Cookies.set('onCheckoutProducts', JSON.stringify(checkoutInfo), {
+          Cookies.set('onCheckoutProducts', JSON.stringify({ method, orderId, totalAmount }), {
             expires:inFiveMinutes
           })
         }
