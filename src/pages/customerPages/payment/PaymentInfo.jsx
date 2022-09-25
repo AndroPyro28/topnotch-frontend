@@ -14,7 +14,7 @@ import {
 import productPriceFormatter from "../../../helpers/ProductPriceFormatter";
 import GetDateToday from "../../../helpers/DateToday";
 import CustomAxios from "../../../customer hooks/CustomAxios";
-
+import Cookies from "js-cookie";
 function PaymentInfo() {
   const { search } = useLocation();
 
@@ -38,17 +38,20 @@ function PaymentInfo() {
           localStorage.getItem("onCheckoutProducts")
         );
 
+        if(checkoutInfo) {
+          const inFiveMinutes = new Date(new Date().getTime() + 15 * 60 * 1000);
+          Cookies.set('onCheckoutProducts', JSON.stringify(checkoutInfo), {
+            expires:inFiveMinutes
+          })
+        }
+
         localStorage.removeItem("onCheckoutProducts");
 
         const {
           method,
           orderId,
           totalAmount,
-          // checkoutProducts,
-          // billingInfo,
-          // proceedPayment,
-        } = checkoutInfo;
-
+        } = JSON.parse(Cookies.get('onCheckoutProducts'));
           setTotalAmount(totalAmount);
           setTransactionId(orderId);
           setPaymentMethod(method);
