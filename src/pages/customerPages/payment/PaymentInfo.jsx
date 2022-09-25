@@ -69,7 +69,7 @@ function PaymentInfo() {
 
   if(loading) return <Loader bg="rgba(0,0,0,0.5)" />
 
-  if (JSON.parse(Cookies.get('onCheckoutProducts') instanceof SyntaxError)) {
+  if (JSON.parse(Cookies.get('onCheckoutProducts')) instanceof SyntaxError) {
     return navigate("/customer/cart");
   }
 
