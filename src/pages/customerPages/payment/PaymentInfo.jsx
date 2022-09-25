@@ -15,18 +15,18 @@ import productPriceFormatter from "../../../helpers/ProductPriceFormatter";
 import GetDateToday from "../../../helpers/DateToday";
 import CustomAxios from "../../../customer hooks/CustomAxios";
 import Cookies from "js-cookie";
+import Loader from "../../../components/loader/Loader"
 function PaymentInfo() {
-  const { search } = useLocation();
-
   const navigate = useNavigate();
 
   const [transactionId, setTransactionId] = useState(null);
   const [totalAmount, setTotalAmount] = useState(0);
   const [paymentMethod, setPaymentMethod] = useState(null);
-
+  const [loading, setLoading] = useState(true)
   useEffect(() => {
     (async () => {
       try {
+        setLoading(true)
         if (
           localStorage.getItem("onCheckoutProducts") == undefined ||
           !localStorage.getItem("onCheckoutProducts")
@@ -72,11 +72,15 @@ function PaymentInfo() {
           toast(msg, { type: "success" });
       } catch (error) {
         console.error(error.message);
+      } finally {
+        setLoading(false);
       }
     })();
   }, []);
 
-  if (totalAmount == 0 || transactionId == null || paymentMethod == null) {
+  if(loading) return <Loader bg={""}/>
+
+  if (!loading && totalAmount == 0 || transactionId == null || paymentMethod == null) {
     return navigate("/customer/cart");
   }
 
