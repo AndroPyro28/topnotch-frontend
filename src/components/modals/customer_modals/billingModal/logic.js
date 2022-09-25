@@ -16,7 +16,7 @@ function logic({ items, totalAmount, paymentType, toast, courierType }) {
       .string()
       .required("Billing Address is required")
       .min(10, "Billing address must be 10 characters long"),
-    contactNo: yup.string().min(11).required("Contact number is required"),
+    contactNo: yup.string().required("Contact number is required"),
     zipCode: yup.string().required("Zip code is required"),
   });
 
