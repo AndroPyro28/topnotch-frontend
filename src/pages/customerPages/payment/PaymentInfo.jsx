@@ -63,6 +63,7 @@ function PaymentInfo() {
           }
           toast(msg, { type: "success" });
       } catch (error) {
+        console.log('error json parse here')
         console.error(error.message);
       } finally {
         setLoading(false);
