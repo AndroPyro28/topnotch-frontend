@@ -52,9 +52,7 @@ function OrderActivities() {
           <Activity status={order.order_status}>
             <span class="service">
               Amount:{" "}
-              {ProductPriceFormmater(
-                order.total_amount + order.total_amount * 0.01
-              )}
+              {ProductPriceFormmater(order.total_amount)}
             </span>
           </Activity>
 
