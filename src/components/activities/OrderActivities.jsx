@@ -78,7 +78,7 @@ function OrderActivities() {
   return (
     <UserActivities>
       
-      <h2>Completed Orders</h2>
+      <h2>Orders</h2>
       {fetchOrders}
       {fetchPagination}
     </UserActivities>
