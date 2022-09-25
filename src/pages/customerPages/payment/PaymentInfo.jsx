@@ -52,6 +52,7 @@ function PaymentInfo() {
           orderId,
           totalAmount,
         } = JSON.parse(Cookies.get('onCheckoutProducts'));
+          console.log(JSON.parse(Cookies.get('onCheckoutProducts')));
           setTotalAmount(totalAmount);
           setTransactionId(orderId);
           setPaymentMethod(method);
