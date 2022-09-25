@@ -19,9 +19,6 @@ import Loader from "../../../components/loader/Loader"
 function PaymentInfo() {
   const navigate = useNavigate();
 
-  const [transactionId, setTransactionId] = useState(null);
-  const [totalAmount, setTotalAmount] = useState(0);
-  const [paymentMethod, setPaymentMethod] = useState(null);
   const [loading, setLoading] = useState(true)
   useEffect(() => {
     (async () => {
@@ -47,14 +44,8 @@ function PaymentInfo() {
 
         localStorage.removeItem("onCheckoutProducts");
 
-        const {
-          method,
-          orderId,
-          totalAmount,
-        } = JSON.parse(Cookies.get('onCheckoutProducts'));
-          setTotalAmount(totalAmount);
-          setTransactionId(orderId);
-          setPaymentMethod(method);
+       
+          
 
           const response = CustomAxios({
             METHOD: "POST",
@@ -82,6 +73,12 @@ function PaymentInfo() {
     return navigate("/customer/cart");
   }
 
+  const {
+    method,
+    orderId,
+    totalAmount,
+  } = JSON.parse(Cookies.get('onCheckoutProducts'));
+
   return (
     <PaymentSuccessContainer>
       <ToastContainer autoClose={1500} />
@@ -96,18 +93,18 @@ function PaymentInfo() {
 
       <Line />
 
-      <TransactionNumber>Transaction ID: {JSON.parse(Cookies.get('onCheckoutProducts')).transactionId}</TransactionNumber>
+      <TransactionNumber>Transaction ID: {orderId}</TransactionNumber>
 
       <PaymentData>
         <span>TOTAL AMOUNT PAID</span>
-        <strong>{productPriceFormatter(JSON.parse(Cookies.get('onCheckoutProducts')).totalAmount)}</strong>
+        <strong>{productPriceFormatter(totalAmount)}</strong>
       </PaymentData>
 
       <Line />
 
       <PaymentData>
         <span>payed by</span>
-        <strong>{JSON.parse(Cookies.get('onCheckoutProducts')).paymentMethod}</strong>
+        <strong>{method}</strong>
       </PaymentData>
 
       <Line />
