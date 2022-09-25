@@ -108,7 +108,7 @@ function DashboardCharts() {
       }
 
       setOverAllSales(overAllSales);
-      setTotalSalesToday(totalSalesToday - totalSalesToday * 0.01);
+      setTotalSalesToday(totalSalesToday);
       setTotalNumberOfAllTransactions(totalNumberOfAllTransactions);
 
       for (const sale in monthlySales) {
