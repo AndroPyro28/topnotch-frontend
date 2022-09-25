@@ -126,6 +126,8 @@ export const DataInformationContainer = styled.div`
     background: white;
     color: #a6b7f1;
     font-weight: 500;
+
+    
     & > i {
         padding: 10px;
         background: #F1F5FB;
@@ -140,12 +142,18 @@ export const DataInformationContainer = styled.div`
         margin: 5;
         text-transform: capitalize;
         font-size: 1.5em;
+        @media (max-width:500px) {
+            font-size: 1em;
+        }
     }
 
     & > p {
         color: black;
         margin: 5px;
         font-size: 1em;
+        @media (max-width:500px) {
+            font-size: 0.8em;
+        }
         /* font-style: italic; */
     }
 `
@@ -163,6 +171,11 @@ align-items: center;
 margin-bottom: 10px;
 border-radius: 10px;
 
+@media (max-width:700px) {
+    & > div:nth-child(3) {
+        display: none;
+    }
+}
 `
 export const AppointmentListContainer = styled.div`
 background: white;

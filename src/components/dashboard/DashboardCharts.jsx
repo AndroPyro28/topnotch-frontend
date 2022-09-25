@@ -165,16 +165,16 @@ function DashboardCharts() {
 
       <FeedbackList>
         <h1>Feedback</h1>
-      <Feedbackdata />  
-      <Feedbackdata />  
-      <Feedbackdata />  
-      <Feedbackdata />  
-      <Feedbackdata />  
-      <Feedbackdata />  
-      <Feedbackdata />  
-      <Feedbackdata />  
-      <Feedbackdata />  
-      <Feedbackdata />  
+        <Feedbackdata />  
+        <Feedbackdata />  
+        <Feedbackdata />  
+        <Feedbackdata />  
+        <Feedbackdata />  
+        <Feedbackdata />  
+        <Feedbackdata />  
+        <Feedbackdata />  
+        <Feedbackdata />  
+        <Feedbackdata />  
       
       </FeedbackList>
     </DashboardChartsContainer>
