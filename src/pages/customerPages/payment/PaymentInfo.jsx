@@ -63,7 +63,6 @@ function PaymentInfo() {
           }
           toast(msg, { type: "success" });
       } catch (error) {
-        console.log('error json parse here')
         console.error(error.message);
       } finally {
         setLoading(false);
@@ -73,7 +72,11 @@ function PaymentInfo() {
 
   if(loading) return <Loader bg="rgba(0,0,0,0.5)" />
 
-  if (JSON.parse(Cookies.get('onCheckoutProducts')) instanceof SyntaxError) {
+  try {
+    const checkoutSummary = JSON.parse(Cookies.get('onCheckoutProducts'))
+  } catch (error) {
+    console.log('error json parse here')
+
     return navigate("/customer/cart");
   }
 
