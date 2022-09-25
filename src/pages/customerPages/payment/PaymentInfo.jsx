@@ -35,6 +35,8 @@ function PaymentInfo() {
           localStorage.getItem("onCheckoutProducts")
         );
 
+        if(checkoutInfo instanceof SyntaxError) return;
+
         if(checkoutInfo) {
           const inFiveMinutes = new Date(new Date().getTime() + 15 * 60 * 1000);
           Cookies.set('onCheckoutProducts', JSON.stringify(checkoutInfo), {
@@ -43,9 +45,6 @@ function PaymentInfo() {
         }
 
         localStorage.removeItem("onCheckoutProducts");
-
-       
-          
 
           const response = CustomAxios({
             METHOD: "POST",
