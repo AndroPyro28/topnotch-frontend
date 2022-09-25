@@ -19,7 +19,8 @@ import Loader from "../../../components/loader/Loader"
 function PaymentInfo() {
   const navigate = useNavigate();
 
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     (async () => {
       try {
@@ -35,7 +36,9 @@ function PaymentInfo() {
           localStorage.getItem("onCheckoutProducts")
         );
 
-        if(checkoutInfo instanceof SyntaxError) return;
+        if(checkoutInfo instanceof SyntaxError) {
+          return window.location.assign('/customer/payment');
+        }
 
         if(checkoutInfo) {
           const inFiveMinutes = new Date(new Date().getTime() + 15 * 60 * 1000);
