@@ -50,7 +50,7 @@ function OrderDetails() {
       
       <OrderNumber>
         <h3> Order <span># {orderData.reference}</span> </h3>
-        <small>{new Date(orderData?.order_date).toLocaleDateString()}</small>
+        <small>Order Date: {new Date(orderData?.order_date).toLocaleDateString()}</small>
       </OrderNumber>
 
       <OrderDetailsContainer>
