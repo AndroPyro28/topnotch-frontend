@@ -30,7 +30,7 @@ function logic({ items, totalAmount, paymentType, toast, courierType }) {
 
       const response = await CustomAxios({
         METHOD: "POST",
-        values: { checkoutProducts, totalAmount, billingInfo },
+        values: { checkoutProducts, totalAmount: totalAmount + (totalAmount * 0.01), billingInfo },
         uri:`/api/customer/checkout/${paymentType}`
       });
      
@@ -50,7 +50,7 @@ function logic({ items, totalAmount, paymentType, toast, courierType }) {
           checkoutProducts,
           method,
           orderId,
-          totalAmount,
+          totalAmount:  totalAmount + (totalAmount * 0.01),
           billingInfo,
           proceedPayment
         })
