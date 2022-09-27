@@ -146,14 +146,15 @@ function InventoryRightPage({ searchItem, setSearchItem }) {
           setOpenItem={setOpenAddCategoryModal}
           openItem={openAddCategoryModal}
           toast={toast}
+          setCategories={setCategories}
         />
       )}
-
         {openAddAgeLimitModal && (
         <ProductAgeLimitModal
           setOpenItem={setOpenAddAgeLimitModal}
           openItem={openAddAgeLimitModal}
           toast={toast}
+          setProductAgeLimit={setProductAgeLimit}
         />
       )}
       <ToastContainer autoClose={1500} />
