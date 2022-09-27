@@ -6,15 +6,12 @@ import {
 } from "../basemodalDesignComponent";
 import { Form, Formik, ErrorMessage, Field } from "formik";
 import inventoryLogic from "./inventoryLogic";
-import CustomAxios from "../../../../customer hooks/CustomAxios";
 
-function InventoryModal({ openItem, setOpenItem, toast, setProducts }) {
+function InventoryModal({ openItem, setOpenItem, toast, setProducts, categories, productAgeLimit }) {
   const [img, setImg] = useState(null);
   const [imgError, setImgError] = useState("");
   const [disabled, setDisabled] = useState(false);
-  const [categories, setCategories] = useState([
-   
-  ])
+
   useEffect(() => {
     try {
       if (img != null && typeof img !== "string") {
@@ -49,49 +46,6 @@ function InventoryModal({ openItem, setOpenItem, toast, setProducts }) {
     categories
   });
 
-  useEffect(() => {
-    (async () => {
-      try {
-        const result = await CustomAxios({METHOD: "GET", uri:'/api/products/getAllCategory'});
-
-        const {success, data, msg} = result;
-        console.log(data);
-        if(!success && msg?.includes("session expired")) {
-          return window.location.reload();
-        }
-        data?.unshift({
-            id: '',
-            category: 'Select category',
-            createdAt:'',
-            updatedAt:''
-        })
-        setCategories(data);
-        
-      } catch (error) {
-        console.error(error.message);
-      }
-    })()
-  }, [])
-
-  // const dropDownCategory = [
-  //   { key: "Select Category", value: "" },
-  //   {
-  //     key: "Toy",
-  //     value: "Toy",
-  //   },
-  //   {
-  //     key: "Food",
-  //     value: "Food",
-  //   },
-  //   {
-  //     key: "Utility",
-  //     value: "Utility",
-  //   },
-  //   {
-  //     key: "Hygiene kit",
-  //     value: "Hygiene kit",
-  //   },
-  // ];
 
   const dropDownPetType = [
     {
@@ -109,29 +63,6 @@ function InventoryModal({ openItem, setOpenItem, toast, setProducts }) {
     {
       key: "Both",
       value: "both",
-    },
-  ];
-
-  const dropDownAgeGap = [
-    {
-      key: "Select age limit",
-      value: "",
-    },
-    {
-      key: "1-2 (yrs old)",
-      value: "1-2",
-    },
-    {
-      key: "2-4 (yrs old)",
-      value: "2-4",
-    },
-    {
-      key: "5-7 (yrs old)",
-      value: "5-7",
-    },
-    {
-      key: "Above 7+ (yrs old)",
-      value: "7+",
     },
   ];
 
@@ -215,10 +146,10 @@ function InventoryModal({ openItem, setOpenItem, toast, setProducts }) {
                     placeholder="(e.g: 1-2, 3-4, 5,9)"
                     id={"productAgeGap"}
                   >
-                    {dropDownAgeGap.map((option) => {
+                    {productAgeLimit.map((option) => {
                       return (
-                        <option key={option.key} value={option.value}>
-                          {option.key}
+                        <option key={option.id} value={option.id}>
+                          {option.age_limit}
                         </option>
                       );
                     })}
