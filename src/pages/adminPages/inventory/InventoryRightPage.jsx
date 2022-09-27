@@ -18,7 +18,7 @@ import CustomAxios from "../../../customer hooks/CustomAxios";
 import CategoryModal from "../../../components/modals/admin_modals/add-category/CategoryModal";
 import ProductAgeLimitModal from "../../../components/modals/admin_modals/add-ageLimit/ProductAgeLimitModal";
 
-function InventoryRightPage({ searchItem, setSearchItem }) {
+function InventoryRightPage({ searchItem, setSearchItem, setProductSummary }) {
   const [openAddItemModal, setOpenAddItemModal] = useState(false);
   const [openAddCategoryModal, setOpenAddCategoryModal] = useState(false);
   const [openAddAgeLimitModal, setOpenAddAgeLimitModal] = useState(false);
@@ -114,6 +114,7 @@ function InventoryRightPage({ searchItem, setSearchItem }) {
   const fetchProducts = products?.slice(8 * currentPage, 8 * currentPage + 8).map(product => {
     return (
       <ProductItem
+      
         product={product}
         key={product.id}
         setProducts={setProducts}

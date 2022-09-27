@@ -39,45 +39,43 @@ export const options = {
   responsive: true,
   plugins: {
     legend: {
-      position: 'top',
+      position: "top",
     },
     title: {
       display: true,
-      text: 'Chart.js Line Chart',
+      text: "Chart.js Line Chart",
     },
   },
-
 };
 
 const salesChartOption = {
-  responsive:true,
+  responsive: true,
   plugins: {
-      title: {
-          display: true,
-          text: 'Total sales for 2022',
-          align: "center",
-          fontSize: 10,
-          color: "black",
-      }
+    title: {
+      display: true,
+      text: `Total sales for ${new Date().getFullYear()}`,
+      align: "center",
+      fontSize: 10,
+      color: "black",
     },
-  animations: {
-      tension: {
-        duration: 1000,
-        easing: 'linear',
-        from: 1,
-        to: 0,
-        loop: true
-      }
-    },
-    scales: {
-      y: { // defining min and max so hiding the dataset does not change scale range
-        min: 0,
-      }
-    
   },
-  maintainAspectRatio:false
-    
-}
+  animations: {
+    tension: {
+      duration: 1000,
+      easing: "linear",
+      from: 1,
+      to: 0,
+      loop: true,
+    },
+  },
+  scales: {
+    y: {
+      // defining min and max so hiding the dataset does not change scale range
+      min: 0,
+    },
+  },
+  maintainAspectRatio: false,
+};
 
 const labels = [
   "January",
@@ -95,40 +93,39 @@ const labels = [
 ];
 
 function InventoryLeftPage({ setSearchItem, searchItem }) {
-  // const [productData, setProductData] = useState(null);
-  const [salesData, setSalesData] = useState([])
+  const [salesData, setSalesData] = useState([]);
+  const [overAllSales, setOverAllSales] = useState(0);
+  const [totalNumberOfAllTransactions, setTotalNumberOfAllTransactions] = useState(0)
   useEffect(() => {
     (async () => {
       try {
-        const result = await CustomAxios({ METHOD: "GET", uri: "/api/admin/dashboard" });
+        const result = await CustomAxios({
+          METHOD: "GET",
+          uri: "/api/admin/dashboard",
+        });
         const salesArr = new Array(12);
         const { data, success, msg } = result;
-        const { monthlySales } = data;
-  
+        const {
+          monthlySales,
+          overAllSales,
+          totalNumberOfAllTransactions,
+        } = data;
+
         if (!success && msg?.includes("session expired")) {
           return window.location.reload();
         }
-  
+
+        setOverAllSales(overAllSales);
+        setTotalNumberOfAllTransactions(totalNumberOfAllTransactions);
         for (const sale in monthlySales) {
           salesArr[sale] = monthlySales[sale];
         }
-  
-        setSalesData(salesArr)
+
+        setSalesData(salesArr);
       } catch (error) {
-        console.error(error.message)
+        console.error(error.message);
       }
-    })()
-    // setProductData({
-    //   labels: mockData?.map((data) => data?.month),
-    //   datasets: [
-    //     {
-    //       label: "Total revenue", // quantity * price
-    //       data: mockData?.map((data) => data?.totalSales), 
-    //       backgroundColor: 'white',
-    //       borderColor: 'black',
-    //     },
-    //   ],
-    // });
+    })();
   }, []);
 
   const data = {
@@ -141,15 +138,6 @@ function InventoryLeftPage({ setSearchItem, searchItem }) {
         backgroundColor: "white",
         data: salesData,
       },
-      // {
-      //   type: "bar",
-      //   label: "",
-      //   backgroundColor: "#a6b7f1",
-      //   data: salesData,
-      //   borderColor: "white",
-      //   borderWidth: 2,
-      //   borderRadius: 100
-      // },
     ],
   };
 
@@ -175,15 +163,15 @@ function InventoryLeftPage({ setSearchItem, searchItem }) {
         <div className="product__info">
           <div className="product__label">
             <center>
-              <label htmlFor="">Purchased</label>
-              <h3>1339</h3>
+              <label htmlFor=""> {`Total sales for ${new Date().getFullYear()}`} </label>
+              <h3>{overAllSales}</h3>
             </center>
           </div>
 
           <div className="product__label">
             <center>
-              <label htmlFor="">Available Stock</label>
-              <h3>1028</h3>
+              <label htmlFor=""> Total transactions </label>
+              <h3>{totalNumberOfAllTransactions}</h3>
             </center>
           </div>
         </div>
