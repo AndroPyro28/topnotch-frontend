@@ -190,7 +190,7 @@ function InventoryRightPage({ searchItem, setSearchItem }) {
 
         <FilterContainer>
           <span>Category: </span>
-          <select name="ItemCategory" id="" onChange={setProps}>
+          <select name="itemCategory" id="" onChange={setProps}>
           <option value="">Select Category</option>
             {categories.map((option) => {
               return (
