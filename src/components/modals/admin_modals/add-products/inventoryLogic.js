@@ -52,8 +52,7 @@ function inventoryLogic({
       petType,
     } = newProduct;
 
-    setProducts((prev) => [
-      ...prev,
+    setProducts(prev => [
       {
         id: newProduct.id,
         product_name: productName,
@@ -66,6 +65,7 @@ function inventoryLogic({
         product_image_id: productImgId,
         pet_type: petType,
       },
+      ...prev
     ]);
     setDisabled(false);
     return setOpenItem(false);
