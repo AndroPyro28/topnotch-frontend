@@ -29,7 +29,6 @@ function categoryLogic({setOpenItem, toast, setDisabled, setCategories}) {
         } catch (error) {
             console.error(error.message)
         } finally {
-            setDisabled(false)
         }
     }
     const initialValues = () => {

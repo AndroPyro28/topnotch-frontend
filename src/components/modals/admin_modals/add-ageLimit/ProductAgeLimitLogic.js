@@ -28,13 +28,11 @@ function ProductAgeLimitLogic({setOpenItem, toast, setDisabled, setProductAgeLim
              toast(msg, {type:'success'})
              setTimeout(() => {
                 setOpenItem(false)
-                setDisabled(true)
             }, 2500)
 
         } catch (error) {
             console.error(error.message)
         } finally {
-            setDisabled(false)
         }
     }
     const initialValues = () => {
