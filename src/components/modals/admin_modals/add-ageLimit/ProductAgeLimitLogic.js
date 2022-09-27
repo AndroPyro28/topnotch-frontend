@@ -8,7 +8,6 @@ function ProductAgeLimitLogic({setOpenItem, toast, setDisabled, setProductAgeLim
             if(!age_limit) {
                 return toast('Product age limit is required', {type:'warning'})
             }
-            setDisabled(true)
             const result = await CustomAxios({METHOD:'POST', uri:'/api/products/addProductAgeLimit', values})
             const {success, msg, insertId} = result
             if(!success && msg?.includes('session expired')) {
@@ -26,7 +25,10 @@ function ProductAgeLimitLogic({setOpenItem, toast, setDisabled, setProductAgeLim
             }])
 
              toast(msg, {type:'success'})
-             setTimeout(() => setOpenItem(false), 2500)
+             setTimeout(() => {
+                setOpenItem(false)
+                setDisabled(true)
+            }, 2500)
 
         } catch (error) {
             console.error(error.message)
