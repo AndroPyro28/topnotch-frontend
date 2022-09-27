@@ -6,8 +6,8 @@ import {
   ProductStatisticContainer,
   ProductStatistic,
 } from "./inventoryComponents";
-
-import { Line, Bar } from "react-chartjs-2";
+import CustomAxios from "../../../customer hooks/CustomAxios";
+import { Line, Bar, Pie, Doughnut, Chart } from "react-chartjs-2";
 
 import {
   Chart as ChartJS,
@@ -19,6 +19,9 @@ import {
   Legend,
   PointElement,
   LineElement,
+  ArcElement,
+  LineController,
+  BarController,
 } from "chart.js";
 
 ChartJS.register(
@@ -51,7 +54,7 @@ const salesChartOption = {
   plugins: {
       title: {
           display: true,
-          text: 'Overall sales chart of this product 2022',
+          text: 'Total sales for 2022',
           align: "center",
           fontSize: 10,
           color: "black",
@@ -76,90 +79,79 @@ const salesChartOption = {
     
 }
 
+const labels = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
 function InventoryLeftPage({ setSearchItem, searchItem }) {
-  const [productData, setProductData] = useState(null);
-
+  // const [productData, setProductData] = useState(null);
+  const [salesData, setSalesData] = useState([])
   useEffect(() => {
-    const mockData = [
-      {
-        id: 1,
-        month: "January",
-        numberOfSales: 10,
-        totalSales: 1200,
-      },
-      {
-        id: 2,
-        month: "Febuary",
-        numberOfSales: 20,
-        totalSales: 5000,
-      },
-      {
-        id: 3,
-        month: "March",
-        numberOfSales: 30,
-        totalSales: 12100,
-      },
-      {
-        id: 4,
-        month: "April",
-        numberOfSales: 40,
-        totalSales: 3250,
-      },
-      
-      {
-        id: 4,
-        month: "May",
-        numberOfSales: 50,
-        totalSales: 4250,
-      },
-
-      {
-        id: 4,
-        month: "June",
-        numberOfSales: 60,
-        totalSales: 3250,
-      },
-      {
-        id: 4,
-        month: "July",
-        numberOfSales: 70,
-        totalSales: 6250,
-      },
-
-      {
-        id: 4,
-        month: "August",
-        numberOfSales: 90,
-        totalSales: 5350,
-      },
-
-      {
-        id: 4,
-        month: "September",
-        numberOfSales: 100,
-        totalSales: 2250,
-      },
-
-      {
-        id: 4,
-        month: "October",
-        numberOfSales: 300,
-        totalSales: 1250,
-      },
-    ];
-
-    setProductData({
-      labels: mockData?.map((data) => data?.month),
-      datasets: [
-        {
-          label: "Total revenue", // quantity * price
-          data: mockData?.map((data) => data?.totalSales), 
-          backgroundColor: 'white',
-          borderColor: 'black',
-        },
-      ],
-    });
+    (async () => {
+      try {
+        const result = await CustomAxios({ METHOD: "GET", uri: "/api/admin/dashboard" });
+        const salesArr = new Array(12);
+        const { data, success, msg } = result;
+        const { monthlySales } = data;
+  
+        if (!success && msg?.includes("session expired")) {
+          return window.location.reload();
+        }
+  
+        for (const sale in monthlySales) {
+          salesArr[sale] = monthlySales[sale];
+        }
+  
+        setSalesData(salesArr)
+      } catch (error) {
+        console.error(error.message)
+      }
+    })()
+    // setProductData({
+    //   labels: mockData?.map((data) => data?.month),
+    //   datasets: [
+    //     {
+    //       label: "Total revenue", // quantity * price
+    //       data: mockData?.map((data) => data?.totalSales), 
+    //       backgroundColor: 'white',
+    //       borderColor: 'black',
+    //     },
+    //   ],
+    // });
   }, []);
+
+  const data = {
+    labels,
+    datasets: [
+      {
+        type: "line",
+        label: "",
+        borderColor: "black",
+        backgroundColor: "white",
+        data: salesData,
+      },
+      // {
+      //   type: "bar",
+      //   label: "",
+      //   backgroundColor: "#a6b7f1",
+      //   data: salesData,
+      //   borderColor: "white",
+      //   borderWidth: 2,
+      //   borderRadius: 100
+      // },
+    ],
+  };
 
   return (
     <InventoryLeftContent>
@@ -197,7 +189,7 @@ function InventoryLeftPage({ setSearchItem, searchItem }) {
         </div>
 
         <ProductStatistic>
-          {productData && <Line data={productData} options={salesChartOption} />}
+          {data && <Line data={data} options={salesChartOption} />}
         </ProductStatistic>
       </ProductStatisticContainer>
     </InventoryLeftContent>
