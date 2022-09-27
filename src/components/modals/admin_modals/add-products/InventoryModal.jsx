@@ -150,7 +150,7 @@ function InventoryModal({ openItem, setOpenItem, toast, setProducts, categories,
 
                     {productAgeLimit.map((option) => {
                       return (
-                        <option key={option.id} value={option.id}>
+                        <option key={option.id} value={`${option.id}-|-${option.age_limit}`}>
                           {option.age_limit}
                         </option>
                       );
@@ -195,7 +195,7 @@ function InventoryModal({ openItem, setOpenItem, toast, setProducts, categories,
                     <option value="">Select Category</option>
                     {categories.map((option) => {
                       return (
-                        <option key={option.id} value={`${option.id}-${option.category}`}>
+                        <option key={option.id} value={`${option.id}-|-${option.category}`}>
                           {option.category}
                         </option>
                       );
