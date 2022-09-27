@@ -81,7 +81,7 @@ function inventoryLogic({ toast, img, imgError, setOpenItem, setImgError, setPro
       .string()
       .required("please set a category to this item")
       .min(1, "please set a category to this item"),
-    productAgeGap: yup.string().required("Pet age gap is required"),
+    productAgeGap: yup.string().required("Pet age limit is required"),
     petType: yup.string().required("Pet Type is required"),
   });
 
