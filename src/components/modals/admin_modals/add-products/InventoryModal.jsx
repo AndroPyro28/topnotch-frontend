@@ -146,6 +146,8 @@ function InventoryModal({ openItem, setOpenItem, toast, setProducts, categories,
                     placeholder="(e.g: 1-2, 3-4, 5,9)"
                     id={"productAgeGap"}
                   >
+                    <option value="">Select age limit</option>
+
                     {productAgeLimit.map((option) => {
                       return (
                         <option key={option.id} value={option.id}>
@@ -190,6 +192,7 @@ function InventoryModal({ openItem, setOpenItem, toast, setProducts, categories,
                     name={"productCategory"}
                     id={"productCategory"}
                   >
+                    <option value="">Select Category</option>
                     {categories.map((option) => {
                       return (
                         <option key={option.id} value={`${option.id}-${option.category}`}>
