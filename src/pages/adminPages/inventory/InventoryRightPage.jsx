@@ -18,7 +18,7 @@ import CustomAxios from "../../../customer hooks/CustomAxios";
 import CategoryModal from "../../../components/modals/admin_modals/add-category/CategoryModal";
 import ProductAgeLimitModal from "../../../components/modals/admin_modals/add-ageLimit/ProductAgeLimitModal";
 
-function InventoryRightPage({ searchItem, setSearchItem, setProductSummary }) {
+function InventoryRightPage({ searchItem, setSearchItem }) {
   const [openAddItemModal, setOpenAddItemModal] = useState(false);
   const [openAddCategoryModal, setOpenAddCategoryModal] = useState(false);
   const [openAddAgeLimitModal, setOpenAddAgeLimitModal] = useState(false);
