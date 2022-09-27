@@ -7,7 +7,14 @@ import {
 import { Form, Formik, ErrorMessage, Field } from "formik";
 import inventoryLogic from "./inventoryLogic";
 
-function InventoryModal({ openItem, setOpenItem, toast, setProducts, categories, productAgeLimit }) {
+function InventoryModal({
+  openItem,
+  setOpenItem,
+  toast,
+  setProducts,
+  categories,
+  productAgeLimit,
+}) {
   const [img, setImg] = useState(null);
   const [imgError, setImgError] = useState("");
   const [disabled, setDisabled] = useState(false);
@@ -20,7 +27,7 @@ function InventoryModal({ openItem, setOpenItem, toast, setProducts, categories,
         fileReader.readAsDataURL(img);
         fileReader.onloadend = async () => {
           if (!fileReader.result.includes("image")) {
-            setImgError('Please set an image to this product');
+            setImgError("Please set an image to this product");
             throw new Error("Please set an image to this product");
           }
           if (fileReader.result.includes("image")) {
@@ -43,9 +50,8 @@ function InventoryModal({ openItem, setOpenItem, toast, setProducts, categories,
     setImgError,
     setProducts,
     setDisabled,
-    categories
+    categories,
   });
-
 
   const dropDownPetType = [
     {
@@ -80,9 +86,7 @@ function InventoryModal({ openItem, setOpenItem, toast, setProducts, categories,
                 class="fa-solid fa-xmark closeBtn"
                 onClick={() => setOpenItem(false)}
               ></i>
-              <h1>
-                Add Item
-              </h1>
+              <h1>Add Item</h1>
 
               <FormInputsContainer>
                 <label htmlFor={"productName"}>Product Name</label>
@@ -147,10 +151,12 @@ function InventoryModal({ openItem, setOpenItem, toast, setProducts, categories,
                     id={"productAgeGap"}
                   >
                     <option value="">Select age limit</option>
-
                     {productAgeLimit.map((option) => {
                       return (
-                        <option key={option.id} value={`${option.id}-|-${option.age_limit}`}>
+                        <option
+                          key={option.id}
+                          value={`${option.id}-|-${option.age_limit}`}
+                        >
                           {option.age_limit}
                         </option>
                       );
@@ -195,7 +201,10 @@ function InventoryModal({ openItem, setOpenItem, toast, setProducts, categories,
                     <option value="">Select Category</option>
                     {categories.map((option) => {
                       return (
-                        <option key={option.id} value={`${option.id}-|-${option.category}`}>
+                        <option
+                          key={option.id}
+                          value={`${option.id}-|-${option.category}`}
+                        >
                           {option.category}
                         </option>
                       );
