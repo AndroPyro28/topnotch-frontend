@@ -94,8 +94,8 @@ function App() {
 
           if (!success && msg?.includes("session expired")) {
                Cookies.remove("userToken");
-               dispatch(authenticationFailed());
-               return window.location.reload();
+              //  dispatch(authenticationFailed({}));
+              //  return window.location.reload();
              }
 
              if (success) {
