@@ -92,7 +92,7 @@ function App() {
           const data = await CustomAxios({METHOD:"GET", uri:`/api/auth`});
           const { success, msg } = data;
 
-          if (!success || msg?.includes("session expired")) {
+          if (!success && msg?.includes("session expired")) {
                Cookies.remove("userToken");
                dispatch(authenticationFailed());
                return window.location.reload();
