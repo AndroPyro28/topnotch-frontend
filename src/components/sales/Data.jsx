@@ -1,13 +1,16 @@
 import React from "react";
 import FormateDateLocal from "../../helpers/FormateDateLocal";
 import Get_Date_N_Time from "../../helpers/Get_Date_N_Time";
-import { TableRow, Col } from "./components";
+import { TableRow, Col, DropDownAction } from "./components";
 import ProductPriceFormmater from "../../helpers/ProductPriceFormatter";
+import {useNavigate} from "react-router-dom";
+
 function Data({ order }) {
+    const navigate = useNavigate();
   const formmattedDate = FormateDateLocal(order.order_date);
   const { newDate, newTime } = Get_Date_N_Time(formmattedDate);
   return (
-    <TableRow className="data">
+    <TableRow className="data" onClick={() => navigate(`/admin/orders/${order.reference}`)}>
       <Col className="id">{order.reference}</Col>
       <Col className="customer">
         {order.firstname} {order.lastname}
@@ -39,10 +42,7 @@ function Data({ order }) {
         </Col>
       )}
       <Col className="payment__method">{order.payment_type}</Col>
-      <Col className="action">
-        {" "}
-        <i className="fa-solid fa-ellipsis-vertical"></i>{" "}
-      </Col>
+      
     </TableRow>
   );
 }

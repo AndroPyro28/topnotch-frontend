@@ -1,7 +1,6 @@
 import React from 'react'
 import Data from "./Data"
 import {SaleOrdersContainer, TableRow, Col, DataList} from "./components"
-
 function SaleOrders({orders}) {
   const fetchOrders = orders?.length > 0 ? orders?.map((order, index) => {
     return <Data order={order} />
@@ -17,7 +16,6 @@ function SaleOrders({orders}) {
               <Col className="price">Price</Col>
               <Col className="order__status">Order Status</Col>
               <Col className="payment__method">Payment Method</Col>
-              <Col className="action">Action</Col>
           </TableRow>
 
           <DataList>

@@ -204,7 +204,7 @@ export const Col = styled.div`
   white-space: nowrap;
   text-overflow: ellipsis;
   text-transform: capitalize;
-  &:last-child {
-    flex: 0.3 !important;
-  }
+  position: relative;
+  max-height: 100px;
+ 
 `;
