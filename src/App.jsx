@@ -137,7 +137,7 @@ function App() {
 
       {navbarType === "public" && !pathname?.includes('room=') && <PublicNavbar />}
 
-      {navbarType === "customer" && !pathname?.includes('room=') || !pathname?.includes('payment=success') && <CustomerNavbar />}
+      {navbarType === "customer" && !pathname?.includes('room=') && !pathname?.includes('payment=success') && <CustomerNavbar />}
 
       {navbarType === "admin" && !pathname?.includes('room=') && <AdminNavbar />}
 
