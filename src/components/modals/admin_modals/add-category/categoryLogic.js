@@ -25,7 +25,7 @@ function categoryLogic({setOpenItem, toast, setDisabled, setCategories}) {
                 updatedAt:'',
             }])
              toast(msg, {type:'success'})
-             setTimeout(() => setOpenItem(false), 2500)
+            //  setTimeout(() => setOpenItem(false), 2500)
         } catch (error) {
             console.error(error.message)
         } finally {
