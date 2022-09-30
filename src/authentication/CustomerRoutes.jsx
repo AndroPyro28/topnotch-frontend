@@ -24,7 +24,7 @@ function CustomerRoutes({ Component }) {
     }
 
   return JSON.parse(Cookies.get("userToken"))?.userType === "customer" ? (
-    <CustomerRoute giveMargin={!pathname?.includes('room=') || !pathname?.includes('payment')}>
+    <CustomerRoute giveMargin={!pathname?.includes('room=') && !pathname?.includes('payment')}>
       <CustomerGlobalStyles />
       {Component}
       </CustomerRoute>
