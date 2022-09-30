@@ -66,13 +66,13 @@ function categoryLogic({setOpenItem, toast, setDisabled, setCategories}) {
 
    const deleteCategory = async (id, setModify) => {
         try {
+            setCategories(prev => prev.filter((data) => id != data.id));
             const res = await CustomAxios({METHOD: "DELETE", uri:`/api/products/deleteCategory/${id}`});
             const {msg, success} = res;
             if(!success && msg?.includes('session expired')) {
                 return window.location.reload();
             }
             toast(`category data has been deleted`, {type: 'success'});
-            setCategories(prev => prev.filter((data) => id != data.id));
         } catch (error) {
             toast('Failed to delete, some went wrong', {type: 'warning'});
             console.error(error.message)

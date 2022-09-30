@@ -69,13 +69,13 @@ function ProductAgeLimitLogic({setOpenItem, toast, setDisabled, setProductAgeLim
 
     const deleteAgeLimit = async (id, setModify) => {
         try {
+            setProductAgeLimit(prev => prev.filter((data) => id != data.id));
             const res = await CustomAxios({METHOD: "DELETE", uri:`/api/products/deleteAgeLimit/${id}`});
             const {msg, success} = res;
             if(!success && msg?.includes('session expired')) {
                 return window.location.reload();
             }
             toast(`age limit data has been deleted`, {type: 'success'});
-            setProductAgeLimit(prev => prev.filter((data) => id != data.id));
         } catch (error) {
             toast('Failed to delete, some went wrong', {type: 'warning'});
             console.error(error.message)
