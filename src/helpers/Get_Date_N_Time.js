@@ -19,7 +19,7 @@ const Get_Date_N_Time = (dateLocal) => {
     hour = hour % 12 < 10 ? `${hour % 12 == 0 ? 12 : `0${hour % 12 }`}` : hour % 12;
     const newTime = `${hour}:${minutes} ${ampm}`;
 
-    const newDate = `${year}-${month}-${day}`;
+    const newDate = `${year}-${month}-${day + 1}`; // utc date default
     return { newDate, newTime };
   };
   export default Get_Date_N_Time ;
