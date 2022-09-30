@@ -14,11 +14,11 @@ const Get_Date_N_Time = (dateLocal) => {
     }
     let hours = date.getHours();
     let minutes = date.getMinutes();
-    let ampm = hours >= 12 ? 'pm' : 'am';
+    let ampm = date.toLocaleString('en-US', { hour: 'numeric', hour12: true });
     hours = hours % 12;
     hours = hours ? hours : 12; // the hour '0' should be '12'
     minutes = minutes < 10 ? '0'+minutes : minutes;
-    const newTime = hours + ':' + minutes + ' ' + ampm;
+    const newTime = hours + ':' + minutes + ' ' + ampm.includes('AM') ? 'am' : 'pm';
 
     const newDate = `${year}-${month}-${day}`;
     return { newDate, newTime };
