@@ -1,8 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import Cookies from "js-cookie";
-import axios from "axios";
 import CustomAxios from "../../../customer hooks/CustomAxios";
-
+import getTime from "../../../helpers/getTime";
+import GetDateToday from "../../../helpers/DateToday";
 function Logic({ linkId, scheduleInfo, toast}) {
   const navigate = useNavigate();
 
@@ -12,7 +11,10 @@ function Logic({ linkId, scheduleInfo, toast}) {
         return toast('Select a schedule to start!', {type:"warning"})
       }
 
-      const response = await CustomAxios({METHOD:"POST", uri:`/api/admin/startStreaming`, values:{linkId, scheduleInfo}})
+      const response = await CustomAxios({METHOD:"POST", uri:`/api/admin/startStreaming`, values:{
+        linkId, scheduleInfo,
+        timeStart:`${GetDateToday()} ${getTime()}`
+      }})
 
       const {success, msg} = response;
       
