@@ -11,7 +11,6 @@ const Get_Date_N_Time = (dateLocal) => {
     if (day < 10) {
       day = `0${day}`;
     }
-
     let hours = date.getHours();
     let minutes = date.getMinutes();
     let ampm = hours >= 12 ? 'pm' : 'am';
@@ -21,6 +20,7 @@ const Get_Date_N_Time = (dateLocal) => {
     const newTime = hours + ':' + minutes + ' ' + ampm;
 
     const newDate = `${year}-${month}-${day}`;
+    console.log(newDate, newTime);
     return { newDate, newTime };
   };
   export default Get_Date_N_Time ;

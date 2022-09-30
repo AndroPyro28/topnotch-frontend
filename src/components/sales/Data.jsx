@@ -9,6 +9,7 @@ function Data({ order }) {
     const navigate = useNavigate();
   const formmattedDate = FormateDateLocal(order.order_date);
   const { newDate, newTime } = Get_Date_N_Time(formmattedDate);
+  console.log(newDate, newTime);
   return (
     <TableRow className="data" onClick={() => navigate(`/admin/orders/${order.reference}`)}>
       <Col className="id">{order.reference}</Col>
