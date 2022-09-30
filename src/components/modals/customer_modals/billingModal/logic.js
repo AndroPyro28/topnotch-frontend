@@ -1,5 +1,6 @@
 import * as yup from "yup";
 import CustomAxios from "../../../../customer hooks/CustomAxios";
+import getTime from "../../../../helpers/getTime";
 
 function logic({ items, totalAmount, paymentType, toast, courierType }) {
   
@@ -52,7 +53,8 @@ function logic({ items, totalAmount, paymentType, toast, courierType }) {
           orderId,
           totalAmount:  totalAmount + (totalAmount * 0.01),
           billingInfo,
-          proceedPayment
+          proceedPayment,
+          timeCaptured: new Date()
         })
       );
 
