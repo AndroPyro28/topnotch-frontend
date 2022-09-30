@@ -1,5 +1,6 @@
 const Get_Date_N_Time = (dateLocal) => {
     const date = new Date(dateLocal);
+    console.log(dateLocal);
 
     let month = date.getMonth() + 1;
     let day = date.getDate();
@@ -20,7 +21,6 @@ const Get_Date_N_Time = (dateLocal) => {
     const newTime = hours + ':' + minutes + ' ' + ampm;
 
     const newDate = `${year}-${month}-${day}`;
-    console.log(newDate, newTime);
     return { newDate, newTime };
   };
   export default Get_Date_N_Time ;
