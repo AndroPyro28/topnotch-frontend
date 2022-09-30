@@ -15,6 +15,7 @@ const Get_Date_N_Time = (dateLocal) => {
     let hours = date.getHours();
     let minutes = date.getMinutes();
     let ampm = date.toLocaleString('en-US', { hour: 'numeric', hour12: true });
+    console.log(ampm);
     hours = hours % 12;
     hours = hours ? hours : 12; // the hour '0' should be '12'
     minutes = minutes < 10 ? '0'+minutes : minutes;
