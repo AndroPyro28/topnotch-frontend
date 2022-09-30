@@ -19,7 +19,7 @@ export const LinksContainer = styled.div`
   margin: 20px;
 
   @media (max-width:650px) {
-  width: 70%;
+  width: 80%;
 
     }
   & > a {
