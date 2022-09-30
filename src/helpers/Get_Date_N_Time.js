@@ -19,7 +19,7 @@ const Get_Date_N_Time = (dateLocal) => {
     hours = hours % 12;
     hours = hours ? hours : 12; // the hour '0' should be '12'
     minutes = minutes < 10 ? '0'+minutes : minutes;
-    const newTime = hours + ':' + minutes + ' ' + hours + ampm.includes('AM') ? 'am' : 'pm';
+    const newTime = hours + ':' + minutes + ampm.includes('AM') ? ' am' : ' pm';
 
     const newDate = `${year}-${month}-${day}`;
     return { newDate, newTime };
