@@ -12,12 +12,13 @@ const Get_Date_N_Time = (dateLocal) => {
       day = `0${day}`;
     }
 
-    let hour = date.getHours();
-    const minutes =
-    date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes();
-    const ampm = hour % 12 >= 12 ? "pm" : "am";
-    hour = hour % 12 < 10 ? `${hour % 12 == 0 ? 12 : `0${hour % 12 }`}` : hour % 12;
-    const newTime = `${hour}:${minutes} ${ampm}`;
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+    let ampm = hours >= 12 ? 'pm' : 'am';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0'+minutes : minutes;
+    const newTime = hours + ':' + minutes + ' ' + ampm;
 
     const newDate = `${year}-${month}-${day}`;
     return { newDate, newTime };
