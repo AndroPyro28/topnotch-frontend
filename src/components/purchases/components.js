@@ -39,7 +39,7 @@ export const Order = styled.div`
     width: 100%;
     height: 100%;
     border-radius: 10px;
-    object-fit: contain;
+    object-fit: cover;
     @media (max-width: 650px) {
       width: 70%;
     }
