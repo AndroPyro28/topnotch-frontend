@@ -37,10 +37,10 @@ export const Order = styled.div`
     & > img {
         align-self:center;
         width: 100%;
-        height: 190px;
+        min-height: 150px;
         border-radius: 10px;
         object-fit: contain;
-        max-height: 200px;
+        max-height: 150px;
         @media (max-width:650px) {
             width: 70%;
         }
