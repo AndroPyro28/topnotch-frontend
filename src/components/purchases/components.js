@@ -28,7 +28,7 @@ export const Order = styled.div`
   padding: 10px 20px;
   border-radius: 10px;
   margin: 10px;
-  max-height: 150px;
+  max-height: 100px;
   @media (max-width: 750px) {
     width: 100%;
     padding: 10px;
@@ -37,10 +37,9 @@ export const Order = styled.div`
   & > img {
     align-self: center;
     width: 100%;
-    min-height: 150px;
+    height: 100%;
     border-radius: 10px;
     object-fit: contain;
-    max-height: 150px;
     @media (max-width: 650px) {
       width: 70%;
     }
