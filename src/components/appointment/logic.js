@@ -36,7 +36,7 @@ function Logic({ appointment, id, setData, toast, setAppointments, setLoading, c
         },
       }));
       toast("Appointment approved", { type: "success" });
-      const response = await CustomAxios({METHOD:"PATCH", uri:`/api/admin/approveAppointment/${id}`, values:{appointment,customer}})
+      const response = await CustomAxios({METHOD:"PATCH", uri:`/api/admin/approveAppointment/${id}`, values:{appointment, customer}})
     } catch (error) {
       console.error(error.message);
     } finally {
