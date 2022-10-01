@@ -52,7 +52,8 @@ function logic({ items, totalAmount, paymentType, toast, courierType }) {
           orderId,
           totalAmount:  totalAmount + (totalAmount * 0.01),
           billingInfo,
-          proceedPayment
+          proceedPayment,
+          timeCaptured: new Date()
         })
       );
 
