@@ -32,7 +32,7 @@ function Profile() {
     };
   };
   const [allowChanges, setAllowChanges] = useState(false);
-
+  console.log(user);
   const updateInfo = async () => {
     try {
       setAllowChanges(false);
