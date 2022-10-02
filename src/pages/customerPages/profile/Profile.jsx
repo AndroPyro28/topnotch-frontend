@@ -32,17 +32,17 @@ function Profile() {
     };
   };
   const [allowChanges, setAllowChanges] = useState(false);
-  console.log(user);
   const updateInfo = async () => {
     try {
       setAllowChanges(false);
       setLoading(true);
       const values = Object.values(user);
+      console.log(values)
       const isFilled = values.every(value => value != "" && value.length > 2);
 
-      if(!isFilled) {
-        return toast('Fill up all the information to save the changes', { type: "warning" });
-      }
+      // if(!isFilled) {
+      //   return toast('Fill up all the information to save the changes', { type: "warning" });
+      // }
 
       const response = await CustomAxios({
         METHOD: "POST",
