@@ -37,6 +37,12 @@ function Profile() {
     try {
       setAllowChanges(false);
       setLoading(true);
+      const values = Object.values(user);
+      const isFilled = values.every(value => value != "" && value.length > 2);
+
+      if(!isFilled) {
+        return toast('Fill up all the information to save the changes', { type: "warning" });
+      }
 
       const response = await CustomAxios({
         METHOD: "POST",
