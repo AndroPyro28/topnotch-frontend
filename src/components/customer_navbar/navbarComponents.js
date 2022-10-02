@@ -124,7 +124,7 @@ export const InfoAndCart = styled.div`
     border: solid 2.5px black;
     border-radius: 10px;
     height: 30px;
-    margin-right: 20px;
+    margin-right: 50px;
     cursor: pointer;
 
     @media (max-width: 950px) {
@@ -167,7 +167,7 @@ export const InfoAndCart = styled.div`
     height: 50px;
     width: 50px;
     border-radius: 50%;
-    margin: 0 5px 0 5px;
+    margin: 0 50px 0 5px;
     cursor: pointer;
     object-fit: cover;
     border: solid 2px gray;
