@@ -11,6 +11,10 @@ function Personal() {
 const {dateTodayFormatter} = AppointmentLogic({})
   useEffect(() => {
     setUser(currentUser);
+
+    const birthdate = document.querySelector('#birthdate');
+
+    birthdate.max = dateTodayFormatter({});
   }, [currentUser]);
 
   const setProps = (e) => {
@@ -46,7 +50,7 @@ const {dateTodayFormatter} = AppointmentLogic({})
       <RowInfo>
         <div class="info">
           <h3>DATE OF BIRTH</h3>
-          {allowChanges ? <input type="date" min={dateTodayFormatter({})} value={user?.birthdate} name="birthdate" onChange={setProps} /> : <span>{`${user?.birthdate}`}</span>}
+          {allowChanges ? <input type="date"  value={user?.birthdate} id="birthdate" name="birthdate" onChange={setProps} /> : <span>{`${user?.birthdate}`}</span>}
         </div>
 
         <div class="info">
