@@ -19,7 +19,7 @@ const {dateTodayFormatter} = AppointmentLogic({})
     const birthdate = document.querySelector('#birthdate');
 
     if(birthdate) {
-      birthdate.max = dateTodayFormatter({});
+      birthdate.max = dateTodayFormatter({year:18});
     }
   }, [allowChanges])
 
