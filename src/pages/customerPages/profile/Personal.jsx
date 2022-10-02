@@ -53,7 +53,7 @@ function Personal() {
         </div>
       </RowInfo>
 
-      <RowInfo>
+      {/* <RowInfo>
         <div class="info">
           <h3>SEX</h3>
           <span>---</span>
@@ -63,7 +63,7 @@ function Personal() {
           <h3>Verified</h3>
           <span>---</span>
         </div>
-      </RowInfo>
+      </RowInfo> */}
     </UserInfo>
   );
 }
