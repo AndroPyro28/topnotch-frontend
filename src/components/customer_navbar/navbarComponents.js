@@ -124,7 +124,7 @@ export const InfoAndCart = styled.div`
     border: solid 2.5px black;
     border-radius: 10px;
     height: 30px;
-    margin-right: 50px;
+    margin-right: 20px;
     cursor: pointer;
 
     @media (max-width: 950px) {
