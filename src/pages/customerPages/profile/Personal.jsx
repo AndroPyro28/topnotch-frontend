@@ -14,7 +14,9 @@ const {dateTodayFormatter} = AppointmentLogic({})
 
     const birthdate = document.querySelector('#birthdate');
 
-    birthdate.max = dateTodayFormatter({});
+    if(birthdate) {
+      birthdate.max = dateTodayFormatter({});
+    }
   }, [currentUser]);
 
   const setProps = (e) => {
