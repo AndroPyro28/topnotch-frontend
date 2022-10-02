@@ -167,7 +167,7 @@ export const InfoAndCart = styled.div`
     height: 50px;
     width: 50px;
     border-radius: 50%;
-    margin: 0 50px 0 5px;
+    margin: 0 5px 0 5px;
     cursor: pointer;
     object-fit: cover;
     border: solid 2px gray;
@@ -210,7 +210,7 @@ export const BotNavbar = styled.section`
 
 export const DropDown = styled.div`
   position: relative;
-
+  margin-right: 20px;
   & > .dropDownBtn {
     padding: 5px;
     cursor: pointer;
