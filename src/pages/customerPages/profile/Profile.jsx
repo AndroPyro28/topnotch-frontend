@@ -34,16 +34,15 @@ function Profile() {
   const [allowChanges, setAllowChanges] = useState(false);
   const updateInfo = async () => {
     try {
-      setAllowChanges(false);
-      setLoading(true);
+      
       const values = Object.values(user);
-      console.log(values)
       const isFilled = values.every(value => value != "");
 
       if(!isFilled) {
         return toast('Fill up all the information to save the changes', { type: "warning" });
       }
-
+      setAllowChanges(false);
+      setLoading(true);
       const response = await CustomAxios({
         METHOD: "POST",
         uri: `/api/customer/updateInfo`,
