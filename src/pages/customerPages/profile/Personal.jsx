@@ -12,12 +12,16 @@ const {dateTodayFormatter} = AppointmentLogic({})
   useEffect(() => {
     setUser(currentUser);
 
+    
+  }, [currentUser]);
+
+  useEffect(() => {
     const birthdate = document.querySelector('#birthdate');
 
     if(birthdate) {
       birthdate.max = dateTodayFormatter({});
     }
-  }, [currentUser]);
+  }, [allowChanges])
 
   const setProps = (e) => {
     setUser(prev => ({...prev, [e.target.name] : e.target.value}))
