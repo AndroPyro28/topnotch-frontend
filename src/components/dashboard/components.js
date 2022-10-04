@@ -166,7 +166,7 @@ export const DataInformationContainer = styled.div`
     & > p {
         color: black;
         margin: 5px;
-        font-size: 0.9em;
+        font-size: 0.1em;
         @media (max-width:500px) {
             font-size: 0.8em;
         }

@@ -187,8 +187,8 @@ function DashboardCharts({setOpenFeedbackModal}) {
         <DataContainer>
           <DataInformation icon={'fa-solid fa-ranking-star'} data={totalSalesToday} title="Total sales today" />
           <DataInformation icon={'fa-solid fa-bag-shopping'} data={overAllSales} title={`Total sales for ${new Date().getFullYear()}`} />
-          <DataInformation icon={'fa-solid fa-cash-register'} data={totalNumberOfAllTransactions} title="Total number of all sucessful transactions" />
-          <DataInformation  icon={"fa-solid fa-cash-register"}data={totalNumberOfAllCancelledTransactions} title="Total number of all cancelled transactions"/>
+          <DataInformation icon={'fa-solid fa-cash-register'} data={totalNumberOfAllTransactions} title="Total sucessful transactions" />
+          <DataInformation  icon={"fa-solid fa-cash-register"}data={totalNumberOfAllCancelledTransactions} title="Total cancelled transactions"/>
         </DataContainer>
 
         <MonthlySalesChartsContainer>

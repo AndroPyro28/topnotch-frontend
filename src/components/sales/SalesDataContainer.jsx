@@ -195,12 +195,12 @@ function SalesData() {
         <SaleInfo
           icon={"fa-solid fa-cash-register"}
           data={totalNumberOfAllTransactions}
-          title="Total number of all successful transactions"
+          title="Total successful transactions"
         />
         <SaleInfo
           icon={"fa-solid fa-cash-register"}
           data={totalNumberOfAllCancelledTransactions}
-          title="Total number of all cancelled transactions"
+          title="Total cancelled transactions"
         />
         {/* <SaleInfo /> */}
       </DataContainer1>
