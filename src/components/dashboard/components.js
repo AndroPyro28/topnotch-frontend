@@ -148,7 +148,7 @@ export const DataInformationContainer = styled.div`
         background: #F1F5FB;
         border-radius: 5px;
         width: fit-content;
-        margin: 2.5px;
+        margin: 2px;
         font-size: 1em;
     }
 
@@ -156,8 +156,7 @@ export const DataInformationContainer = styled.div`
         color: rgb(25,19,2);
         text-transform: capitalize;
         font-size: 1em;
-        margin: 2.5px;
-
+        margin: 2px;
         @media (max-width:500px) {
             font-size: 1em;
         }
@@ -166,7 +165,7 @@ export const DataInformationContainer = styled.div`
     & > p {
         color: black;
         font-size: 1em;
-        margin: 2.5px;
+        margin: 2px;
         @media (max-width:500px) {
             font-size: 0.8em;
         }
