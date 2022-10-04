@@ -150,7 +150,7 @@ export const DataInformationContainer = styled.div`
         border-radius: 5px;
         width: fit-content;
         margin: 5px;
-        font-size: 1.5em;
+        font-size: 1.3em;
     }
 
     & > span {
