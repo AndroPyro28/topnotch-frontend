@@ -150,7 +150,7 @@ export const DataInformationContainer = styled.div`
         border-radius: 5px;
         width: fit-content;
         margin: 5px;
-        font-size: 1.3em;
+        font-size: 1.4em;
     }
 
     & > span {
@@ -166,7 +166,7 @@ export const DataInformationContainer = styled.div`
     & > p {
         color: black;
         margin: 5px;
-        font-size: 0.1em;
+        font-size: 1em;
         @media (max-width:500px) {
             font-size: 0.8em;
         }
