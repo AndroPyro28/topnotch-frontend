@@ -136,7 +136,7 @@ export const DataInformationContainer = styled.div`
     border-radius: 10px;
     margin: 10px 10px;
     height: fit-content;
-    max-height: 120px;
+    max-height: 130px;
     /* flex: 1.3; */
     flex: 1;
     background: white;
@@ -150,14 +150,14 @@ export const DataInformationContainer = styled.div`
         border-radius: 5px;
         width: fit-content;
         margin: 5px;
-        font-size: 1.4em;
+        font-size: 1.2em;
     }
 
     & > span {
         color: rgb(25,19,2);
         margin: 5;
         text-transform: capitalize;
-        font-size: 1.3em;
+        font-size: 1.2em;
         @media (max-width:500px) {
             font-size: 1em;
         }
