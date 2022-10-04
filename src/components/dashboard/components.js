@@ -136,6 +136,7 @@ export const DataInformationContainer = styled.div`
     border-radius: 10px;
     margin: 10px 10px;
     height: fit-content;
+    max-height: 150px;
     /* flex: 1.3; */
     flex: 1;
     background: white;
