@@ -157,7 +157,7 @@ export const DataInformationContainer = styled.div`
         color: rgb(25,19,2);
         margin: 5;
         text-transform: capitalize;
-        font-size: 1.5em;
+        font-size: 1.3em;
         @media (max-width:500px) {
             font-size: 1em;
         }
