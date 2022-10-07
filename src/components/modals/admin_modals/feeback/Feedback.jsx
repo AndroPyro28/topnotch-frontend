@@ -25,7 +25,7 @@ function Feedback({data, setFeedbacks}) {
   return (
     <FeedbackDataContainer  view={view}>
       <Comments onClick={() => setView(prev => !prev)}>
-        <img src={data.profile_image_url} />
+        <img src={data.profile_image_url} /> {data?.firstname} {data?.lastname}
         <p>
           <Rate>
             <span>Rated</span>
