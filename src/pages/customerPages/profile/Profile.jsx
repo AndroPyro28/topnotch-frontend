@@ -49,7 +49,7 @@ function Profile() {
         values: { user, profileImg },
       });
 
-      const { success, msg, user: newUser } = response;
+      const { success, msg } = response;
 
       if (msg?.includes("session expired") && !success) {
         toast(msg, { type: "error" });
@@ -57,7 +57,7 @@ function Profile() {
       }
 
       if (!success) return toast(msg, { type: "error" });
-
+     const { user: newUser } = response;
       dispatch(authenticationSuccess({ currentUser: newUser, isAuth: true }));
       setProfileImg(null);
       return toast(msg, { type: "success" });
