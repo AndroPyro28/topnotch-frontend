@@ -56,10 +56,10 @@ function Profile() {
         return window.location.reload();
       }
 
-      dispatch(authenticationSuccess({ currentUser: newUser, isAuth: true }));
-      setProfileImg(null);
       if (!success) return toast(msg, { type: "error" });
 
+      dispatch(authenticationSuccess({ currentUser: newUser, isAuth: true }));
+      setProfileImg(null);
       return toast(msg, { type: "success" });
     } catch (error) {
       console.log(error.message);
