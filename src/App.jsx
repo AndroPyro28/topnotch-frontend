@@ -141,7 +141,7 @@ function App() {
     '/admin/liveStreamChannels',
     '/customer/cart',
     '/admin/inventory',
-    '/admin/record/appointments/'
+    
   ]
 
   
@@ -305,7 +305,9 @@ function App() {
       </Routes>
 
       {
-        !footerExcludeRoutes.includes(pathname) && !pathname.includes('/liveStreamChannels/room=') && <Footer />
+        !footerExcludeRoutes.includes(pathname) 
+        && !pathname.includes('/liveStreamChannels/room=') 
+        && !pathname.includes('/admin/record/appointments/')  && <Footer />
       }
       
     </AppRoot>
