@@ -140,7 +140,8 @@ function App() {
     '/customer/liveStreamChannels', 
     '/admin/liveStreamChannels',
     '/customer/cart',
-    '/admin/inventory'
+    '/admin/inventory',
+    '/admin/record/appointments/'
   ]
 
   
