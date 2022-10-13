@@ -307,7 +307,10 @@ function App() {
       {
         !footerExcludeRoutes.includes(pathname) 
         && !pathname.includes('/liveStreamChannels/room=') 
-        && !pathname.includes('/admin/record/appointments/') && <Footer />
+        && !pathname.includes('/admin/record/appointments/') 
+        && !pathname.includes(' /customer/payment')  
+         && <Footer />
+        
       }
       
     </AppRoot>
