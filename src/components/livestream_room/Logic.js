@@ -38,7 +38,6 @@ function Logic({
     try {
       if (isAdmin) {
         mediaRecorder?.stop();
-
         const blob = new Blob(parts, {
           type: "video/webm",
         });
