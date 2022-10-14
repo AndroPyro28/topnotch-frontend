@@ -14,7 +14,6 @@ function Product({ product, isOutOfStock }) {
   const { addToCart } = productLogic({ toast, setDisable });
   return (
     <ProductItem isOutOfStock={isOutOfStock}>
-      {/* <ToastContainer autoClose={1500} /> */}
       <ProductItemImg src={product?.product_image_url} />
       <ProductItemName>{product?.product_name}</ProductItemName>
       <small>
