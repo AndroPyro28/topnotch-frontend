@@ -25,7 +25,7 @@ function Product({ product, isOutOfStock }) {
       </ProductItemDescription>
 
       <ProductItemPrice>₱ {product?.product_price}</ProductItemPrice>
-      <span className="add__to__cart" onClick={() => addToCart(product)} disable={disable}>
+      <span className={`add__to__cart ${disable ? `disable` : ``}`} onClick={() => addToCart(product)} >
         <i className="fa-solid fa-cart-plus"></i>{" "}
         <span>{isOutOfStock ? "Out Of Stock" : "Add To Cart"} </span>
       </span>

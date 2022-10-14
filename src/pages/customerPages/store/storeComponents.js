@@ -227,7 +227,7 @@ export const ProductItem = styled.div`
       color: black;
     }
 
-    &:disabled {
+    &.disable {
       pointer-events: none;
     }
 
