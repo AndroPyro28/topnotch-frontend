@@ -10,11 +10,39 @@ import {
 import { toast, ToastContainer } from "react-toastify";
 import FormikControl from "../../../formik/FormikControl";
 import Loader from "../../../components/loader/Loader"
+import CustomAxios from "../../../customer hooks/CustomAxios";
 
 function Appointment() {
   const [image, setImage] = useState(null);
   const [imgError, setImgError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [admins, setAdmins] = useState([]);
+  useEffect(() => {
+    (async() => {
+      try {
+        const res = await CustomAxios({METHOD: "GET", uri: '/api/customer/getAllAdmin'})
+        const { success, msg, data } = res;
+        console.log(res)
+      if (msg?.includes("session expired") && !success) {
+        toast(msg, { type: "error" });
+        return window.location.reload();
+      }
+      
+      setAdmins(data.map((d) => {
+        return {
+          key:`${d.firstname} ${d.lastname}`,
+          value:  d.id
+        }
+      }));
+      setAdmins((prev) => [{
+        key: "Select Admin",
+        value: "",
+    }  ,...prev])
+      } catch (error) {
+        console.error(error)
+      }
+    })()
+  }, [])
 
   useEffect(() => {
     try {
@@ -144,6 +172,15 @@ function Appointment() {
                   type="datetime-local"
                   className="input__container"
                 />
+
+                <FormikControl
+                  name="admin_id"
+                  label="Select groomer (optional)"
+                  control="select"
+                  options={admins}
+                  className="input__container"
+                />
+
               </FormInputsContainer>
 
               <FormInputsContainer>
