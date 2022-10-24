@@ -14,12 +14,9 @@ function Home() {
       <HomeBannerContainer>
         <BannerContent>
           <h3>
-          W e l c o m e 
-          &nbsp;
-            <br />
-            t o  T h e
+          W e l c o m e   &nbsp; t o   &nbsp; T h e &nbsp;  T o p N o t c h
             &nbsp;
-            <br />T o p N o t c h &nbsp; <br /> D o g &nbsp; <br /> G r o o m i n g &nbsp; <br /> M a l o l o s{" "}
+            <br /> D o g &nbsp; G r o o m i n g &nbsp; M a l o l o s{" "}
           </h3>
           <p>
           Your furbaby’s need
@@ -66,7 +63,7 @@ function Home() {
             </p>
           </Step>
 
-          <Step>
+          {/* <Step>
             <img src="/images/shippingIcon.png" alt="" />
             <h3>Shipping</h3>
 
@@ -83,7 +80,7 @@ function Home() {
               Lorem ipsum, dolor sit amet consectetur adipisicing elit.
               Mollitia, aut.
             </p>
-          </Step>
+          </Step> */}
         </StepsContainer>
       </StepsWrapper>
     </HomePageContainer>
