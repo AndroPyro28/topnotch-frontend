@@ -85,7 +85,7 @@ function AppointmentInfo({ data, setData, setLoading }) {
       <InfoRow>
         <Info>
           <h4>Groomer</h4>
-          <span>{admin?.firstname || ''} {admin?.lastname || ''}</span>
+          <span>{admin?.firstname || '--'} {admin?.lastname || '--'}</span>
         </Info>
       </InfoRow>
       <InfoRow>
