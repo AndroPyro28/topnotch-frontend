@@ -9,7 +9,7 @@ import {
 } from "./appointmentComponents";
 import { toast, ToastContainer } from "react-toastify";
 import FormikControl from "../../../formik/FormikControl";
-import Loader from "../../../components/loader/Loader"
+import Loader from "../../../components/loader/Loader";
 import CustomAxios from "../../../customer hooks/CustomAxios";
 
 function Appointment() {
@@ -18,31 +18,39 @@ function Appointment() {
   const [loading, setLoading] = useState(false);
   const [admins, setAdmins] = useState([]);
   useEffect(() => {
-    (async() => {
+    (async () => {
       try {
-        const res = await CustomAxios({METHOD: "GET", uri: '/api/customer/getAllAdmin'})
+        const res = await CustomAxios({
+          METHOD: "GET",
+          uri: "/api/customer/getAllAdmin",
+        });
         const { success, msg, data } = res;
-        console.log(res)
-      if (msg?.includes("session expired") && !success) {
-        toast(msg, { type: "error" });
-        return window.location.reload();
-      }
-      
-      setAdmins(data.map((d) => {
-        return {
-          key:`${d.firstname} ${d.lastname}`,
-          value:  d.id
+        console.log(res);
+        if (msg?.includes("session expired") && !success) {
+          toast(msg, { type: "error" });
+          return window.location.reload();
         }
-      }));
-      setAdmins((prev) => [{
-        key: "Select Admin",
-        value: "",
-    }  ,...prev])
+
+        setAdmins(
+          data.map((d) => {
+            return {
+              key: `${d.firstname} ${d.lastname}`,
+              value: d.id,
+            };
+          })
+        );
+        setAdmins((prev) => [
+          {
+            key: "Select Admin",
+            value: "",
+          },
+          ...prev,
+        ]);
       } catch (error) {
-        console.error(error)
+        console.error(error);
       }
-    })()
-  }, [])
+    })();
+  }, []);
 
   useEffect(() => {
     try {
@@ -52,7 +60,7 @@ function Appointment() {
         fileReader.readAsDataURL(image);
         fileReader.onloadend = async () => {
           if (!fileReader?.result?.includes("image")) {
-            setImage('');
+            setImage("");
             setImgError("Please set an image type to this appointment");
           } else {
             setImage(fileReader.result);
@@ -77,8 +85,8 @@ function Appointment() {
   useEffect(() => {
     const birthdate = document.querySelector("#birthdate");
     const scheduledDate = document.querySelector("#scheduledDate");
-      birthdate.max = dateTodayFormatter({year:1, month: 4});
-      scheduledDate.min = `${dateTodayFormatter({date:1})}T00:00:00`;
+    birthdate.max = dateTodayFormatter({ year: 1, month: 4 });
+    scheduledDate.min = `${dateTodayFormatter({ date: 1 })}T00:00:00`;
   }, []);
 
   return (
@@ -92,9 +100,7 @@ function Appointment() {
           <Form class="appointment__form__container" autoComplete="off">
             <AppointmentFormPhoto></AppointmentFormPhoto>
             <GlobalStyles />
-            {
-              loading && <Loader bg={"rgba(0, 0, 0, 0.548)"} />
-            }
+            {loading && <Loader bg={"rgba(0, 0, 0, 0.548)"} />}
             <ToastContainer autoClose={4000} />
             <AppointmentFormInputsContainer>
               <h2>
@@ -103,9 +109,8 @@ function Appointment() {
               </h2>
 
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae
-                doloremque obcaecati maxime voluptatem vero quasi voluptatum
-                alias. Quasi, dolor placeat!
+                All online bookings are reviewed and approved prior to
+                confirmation to avoid scheduling conflicts
               </p>
 
               <FormInputsContainer>
@@ -180,9 +185,7 @@ function Appointment() {
                   options={admins}
                   className="input__container"
                 />
-
               </FormInputsContainer>
-
               <FormInputsContainer>
                 <div className="input__container">
                   <label>Sample picture of your pet</label>
@@ -194,7 +197,6 @@ function Appointment() {
                   />
                   <div className="error__message">{imgError}</div>
                 </div>
-                
               </FormInputsContainer>
 
               <FormInputsContainer>
