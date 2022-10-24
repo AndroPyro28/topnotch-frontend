@@ -54,12 +54,8 @@ function Home() {
           <Step>
             <img src="/images/shippingIcon.png" alt="" />
             <h3>Shipping</h3>
-            <p style={{textAlign:'start'}}>
-            (1st shipping) Delivered with US
-            <br />
-            (2nd shipping) Delivered through LalaMove and J&T
-            <br />
-            (3rd shipping) Pay via Master Card, Gcash or Cash on Delivery 
+            <p>
+             Deliver with Us
             </p>
           </Step>
 
