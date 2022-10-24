@@ -32,7 +32,7 @@ export const BannerContent = styled.div`
   width: 30%;
   text-align: start;
   & > h3 {
-    font-size: 3em;
+    font-size: 1.5em;
     font-family: "montserrat", "league spartan", sans-serif !important;
     text-transform: capitalize;
   }
