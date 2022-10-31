@@ -49,6 +49,8 @@ function Index() {
             return data;
           }
         })
+        employeeOfTheMonth.sort((a, b) => a.appointmentCounts-b.appointmentCounts);
+        employeeOfTheMonth.length = 3;
         setEmployees(employeeOfTheMonth);
       } catch (error) {
         console.error("error here", error.message);

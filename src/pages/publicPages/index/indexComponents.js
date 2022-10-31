@@ -296,7 +296,7 @@ export const TeamContent = styled.div`
   }
   &  img {
     width: 100%;
-    height: 85%;
+    height: 75%;
     object-fit: contain;
   }
 
