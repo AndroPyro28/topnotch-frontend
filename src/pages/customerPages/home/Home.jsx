@@ -58,25 +58,7 @@ function Home() {
              Deliver with Us
             </p>
           </Step>
-
-          {/* <Step>
-            <img src="/images/shippingIcon.png" alt="" />
-            <h3>Shipping</h3>
-
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Mollitia, aut.
-            </p>
-          </Step>
-
-          <Step>
-            <img src="/images/shippingIcon.png" alt="" />
-            <h3>Shipping</h3>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Mollitia, aut.
-            </p>
-          </Step> */}
+          
         </StepsContainer>
       </StepsWrapper>
     </HomePageContainer>
