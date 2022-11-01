@@ -49,9 +49,12 @@ function Index() {
             return data;
           }
         })
-        employeeOfTheMonth.sort((a, b) => a.appointmentCounts-b.appointmentCounts);
-        employeeOfTheMonth.length = 3;
-        setEmployees(employeeOfTheMonth);
+        if(employeeOfTheMonth.length > 0 ) {
+          employeeOfTheMonth.sort((a, b) => a.appointmentCounts-b.appointmentCounts);
+          employeeOfTheMonth.length = 3;
+          setEmployees(employeeOfTheMonth);
+        }
+        
       } catch (error) {
         console.error("error here", error.message);
       }
@@ -236,7 +239,8 @@ function Index() {
         feedbacks?.length > 0 && fetchFeedbacks
       }
 
-      <OurTeamSection>
+      {
+        employees.length > 0 && <OurTeamSection>
         <motion.h1 variants={childVariants} animate="animate" initial="initial">
           {/* Employee of the month */}
         </motion.h1>
@@ -247,7 +251,6 @@ function Index() {
           animate="animate"
           initial="initial"
         >
-          
             <TeamContent>
             {
             employees?.map(employee => (
@@ -264,6 +267,8 @@ function Index() {
             </Content>
         </motion.div>
       </OurTeamSection>
+      }
+      
     </IndexPageContainer>
   );
 }
