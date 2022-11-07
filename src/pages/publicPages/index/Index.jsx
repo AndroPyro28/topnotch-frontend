@@ -43,7 +43,7 @@ function Index() {
         });
         const todayMonth = new Date().getMonth();
         const todayYear = new Date().getFullYear();
-        const employeeOfTheMonth = res?.data.filter(data => {
+        const employeeOfTheMonth = res?.data?.filter(data => {
           const date = new Date(data.date_n_time);
           if(todayMonth == date.getMonth() && todayYear == date.getFullYear()) {
             return data;
