@@ -1,20 +1,23 @@
 import React, { useEffect } from 'react'
 import Board from '../../../components/livestream_room/Board';
 import Video from '../../../components/livestream_room/Video';
-import {LiveStreamRoomContainer, GlobalStyles} from "./components";
+import {LiveStreamRoomContainer} from "./components";
 import { useState } from 'react';
 import BoardModal from '../../../components/livestream_room/BoardModal';
-import Loader from '../../../components/loader/Loader';
-
+import Feedback from '../../../components/feedback/Feedback'
+import { useSelector } from 'react-redux';
 function LiveStreamRoom() {
-  
+
+    const { feedback } = useSelector((state) => state);
 const [displayBoard, setDisplayBoard] = useState(true)
 const [displayBoardModal, setDisplayBoardModal] = useState(false)
 const [comments, setComments] = useState([])
 
   return (
     <LiveStreamRoomContainer id="liveStreamRoomContainer" displayBoard={displayBoard}>
-
+      {
+        feedback && <Feedback />
+      }
         <Video setDisplayBoard={setDisplayBoard} setDisplayBoardModal={setDisplayBoardModal} displayBoard={displayBoard} />
 
         {
