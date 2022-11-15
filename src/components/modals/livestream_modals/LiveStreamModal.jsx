@@ -80,6 +80,7 @@ function LiveStreamModal({ setToggleModal }) {
 console.log(scheduleList);
   const fetchSchedule = scheduleList
     ?.slice(4 * currentPage, 4 * currentPage + 4)
+    ?.filter(schedule => schedule.appointment.appointment_type === 'grooming')
     ?.map((schedule) => (
       <Schedule
         key={schedule.appointment.id}
