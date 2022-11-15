@@ -77,10 +77,9 @@ function LiveStreamModal({ setToggleModal }) {
   const { startStream } = Logic({ linkId, scheduleInfo, toast });
 
   if (loading) return <Loader bg={`rgba(0, 0, 0, 0.548)`} />;
-
   const fetchSchedule = scheduleList
     ?.slice(4 * currentPage, 4 * currentPage + 4)
-    ?.map((schedule) => (
+    ?.filter((schedule) => schedule.appointment.appointment_type.toLowerCase() === 'grooming' && (
       <Schedule
         key={schedule.appointment.id}
         data={schedule}
