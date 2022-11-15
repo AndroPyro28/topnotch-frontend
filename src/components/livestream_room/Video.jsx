@@ -101,9 +101,10 @@ function Video({ setDisplayBoard, setDisplayBoardModal, displayBoard: displayBoa
 
         socket?.on('livestreamFinallyEnded', () => {
           if(pathname.includes('/public/liveStreamChannels/room')) {
-
-          } else {
-            dispatch(open())
+            return window.location.assign('/')
+          } 
+          if(pathname.includes('/customer/liveStreamChannels/room')) {
+           return  dispatch(open())
           }
         })
   
