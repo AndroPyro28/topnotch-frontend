@@ -79,14 +79,17 @@ function LiveStreamModal({ setToggleModal }) {
   if (loading) return <Loader bg={`rgba(0, 0, 0, 0.548)`} />;
   const fetchSchedule = scheduleList
     ?.slice(4 * currentPage, 4 * currentPage + 4)
-    ?.filter((schedule) => schedule.appointment.appointment_type.toLowerCase() === 'grooming' && (
-      <Schedule
+    ?.filter((schedule) => {
+      if(schedule.appointment.appointment_type.toLowerCase() === 'grooming') {
+      return <Schedule
         key={schedule.appointment.id}
         data={schedule}
         scheduleInfo={scheduleInfo}
         setScheduleInfo={setScheduleInfo}
       />
-    ));
+      }
+    }
+    );
 
   return (
     <BackdropModal>
