@@ -100,7 +100,11 @@ function Video({ setDisplayBoard, setDisplayBoardModal, displayBoard: displayBoa
         });
 
         socket?.on('livestreamFinallyEnded', () => {
-          dispatch(open())
+          if(pathname.includes('/public/liveStreamChannels/room')) {
+
+          } else {
+            dispatch(open())
+          }
         })
   
         // for admin
