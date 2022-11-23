@@ -297,7 +297,7 @@ export const ProductListContainer = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 0vh;
-  max-height: 50vh;
+  max-height: 45vh;
   overflow: auto;
   @media (max-width: 550px) {
     font-size: 1em;
@@ -380,7 +380,6 @@ export const CartPopupBoxContainer = styled.div`
  position: relative;
    height: 100%;
    z-index: 10000;
-
    & > h1 {
      margin: 20px;
      text-align: start;
