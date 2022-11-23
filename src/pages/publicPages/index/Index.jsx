@@ -26,7 +26,6 @@ function Index() {
           METHOD: "GET",
           uri: "/api/public/getFirstThreeFeedback",
         });
-        console.log(res);
         setFeedbacks(res);
       } catch (error) {
         console.error("error here", error.message);

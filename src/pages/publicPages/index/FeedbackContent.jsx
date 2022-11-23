@@ -11,7 +11,7 @@ function FeedbackContent({ data }) {
   for (let i = 0; i < data.ratings; i++) {
     ratingsLength.push("");
   }
-
+  
   const rate = ratingsLength.map((rate, index) => (
     <i className="fa-solid fa-paw" key={index}></i>
   ));
