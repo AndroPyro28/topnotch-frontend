@@ -37,7 +37,7 @@ function OrderDetails({data}) {
             <i class="fa-solid fa-user"></i> {customer?.firstname} {customer?.lastname}
           </small>
           <small>
-            <i class="fa-solid fa-phone"></i> (+63) {data?.contact}
+            <i class="fa-solid fa-phone"></i>+{data?.contact}
           </small>
           <small>
             <i class="fa-solid fa-location-dot"></i> {data.billing_address}
