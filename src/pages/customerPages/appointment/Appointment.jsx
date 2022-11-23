@@ -99,12 +99,14 @@ function Appointment() {
       {(formik) => {
        
         const time = formik.values?.dateNtime?.split('T')[1];
-        if(time < '08:00' && time > '19:00') {
+        if(time < '08:00' || time > '19:00') {
         //   formik.setTouched({
         //     ...formik.touched,
         //     dateNtime: true,
         // });
-          formik.setFieldError('dateNtime', 'error time')
+        
+        // formik.setFieldError('dateNtime', 'invalid time')
+        formik.setFieldValue('dateNtime', '')
         }
         return (
           <Form class="appointment__form__container" autoComplete="off">
