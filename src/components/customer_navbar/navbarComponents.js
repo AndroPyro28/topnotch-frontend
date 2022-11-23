@@ -185,11 +185,26 @@ export const BotNavbar = styled.section`
   display: flex;
   justify-content: center;
 
+  &.hamburger {
+    & > i {
+      align-self: center;
+      font-size: 1.5em;
+      color: black;
+      @media screen and (min-width:1020px) {
+      display: none;
+      cursor: pointer;
+    }
+    }
+  }
   & > a {
     padding: 10px 20px;
     margin: 5px;
     color: black !important;
-
+    border-bottom: solid 2px transparent;
+    font-size: 0.9em;
+    @media screen and (max-width:1020px) {
+      display: none;
+    }
     @media (max-width: 580px) {
       & {
         padding: 10px;
