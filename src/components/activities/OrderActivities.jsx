@@ -50,7 +50,7 @@ function OrderActivities() {
   ) : orders?.length > 0 ? (
     orders?.slice(6 * currentPage, 6 * currentPage + 6)?.map((order, index) => {
       return (
-        <RowInfo key={index} onClick={() => openFeedbackIfCompleted(order.order_status)}>
+        <RowInfo key={index} >
           <Activity status={order.order_status}>
             <span class="date">
               {DateFormmater(order.order_date)}

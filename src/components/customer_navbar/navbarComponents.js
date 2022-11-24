@@ -328,6 +328,8 @@ export const ProductContainer = styled.div`
   @media (max-width: 550px) {
     font-size: 1em;
   }
+
+ 
   & > img {
     width: 100px;
     max-height: 80px;
@@ -377,6 +379,24 @@ export const ProductQuantity = styled.div`
   font-size: 0.9em;
   font-weight: 500;
   color: gray;
+  & > button {
+    margin: 5px;
+    border: none;
+    padding: 2px 4px;
+    border-radius: 10px;
+    color: gray;
+    cursor: pointer;
+    background: none;
+    font-size: 1.1em;
+    font-weight:1000;
+    &.incremeant {
+    color: lightgreen;
+      &:disabled {
+        color: gray;
+      }
+    }
+  }
+
   @media (max-width: 550px) {
     font-size: 0.7em;
   }

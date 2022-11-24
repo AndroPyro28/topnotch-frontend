@@ -39,13 +39,12 @@ function AppointmentActivities() {
     console.log(appointment.date_n_time.substring(0,appointment.date_n_time.indexOf(".")));
     const {newDate, newTime} = Get_Date_N_Time(appointment.date_n_time);
     
-    console.log(appointment.date_n_time)
     const openFeedbackIfCompleted = (status) => {
       if(status.toLowerCase() === 'completed')
         dispatch(open())
       }
 
-    return <RowInfo key={index} onClick={() => openFeedbackIfCompleted(appointment.status)}>
+    return <RowInfo key={index} >
     <Activity status={appointment.status}>
           <span class="date"> {newDate} at {newTime} </span>
         </Activity>
