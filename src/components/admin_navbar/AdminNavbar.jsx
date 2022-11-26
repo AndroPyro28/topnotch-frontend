@@ -15,7 +15,6 @@ function AdminNavbar() {
       };
 
       const [openMenu, setOpenMenu] = useState(false)
-      console.log(currentUser);
       const navLinkStyles = ({ isActive }) => {
         return {
           textDecoration: isActive ? "none" : "",

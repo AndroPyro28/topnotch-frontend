@@ -54,6 +54,7 @@ function Home() {
           <Step>
             <img src="/images/shippingIcon.png" alt="" />
             <h3>Shipping</h3>
+            
             <p>
              Deliver with Us
             </p>
