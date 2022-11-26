@@ -78,7 +78,7 @@ function Employees() {
 
       <div className="month">
         {" "}
-        <label htmlFor=""> Employees this month: </label>
+        <label htmlFor=""> Select month to display: </label>
         <select name="" id="" onChange={(e) => setMonth(e.target.value)}>
           <option value={-1}>month</option>
           {labels.map((month, index) => (
