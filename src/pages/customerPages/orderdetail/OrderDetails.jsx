@@ -23,7 +23,7 @@ function OrderDetails({data}) {
           <i class="fa-solid fa-receipt"></i> total {productPriceFormatter(data.total_amount)} pesos only
           </small>
           <small>
-          <i class="fa-solid fa-receipt"></i> shipping: {productPriceFormatter(data.total_amount * 0.01)} pesos only
+          <i class="fa-solid fa-receipt"></i> shipping: {productPriceFormatter(Math.round(data.total_amount * 0.01))} pesos only
           </small>
           <small>
           <i class="fa-solid fa-credit-card"></i> {data.payment_type} Payment

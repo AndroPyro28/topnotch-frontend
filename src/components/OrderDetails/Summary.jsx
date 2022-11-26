@@ -15,7 +15,7 @@ function Summary({data}) {
 
       <OrderCalculation>
         <div>Shipping:</div>
-        <div>{productPriceFormatter(data.total_amount * 0.01)}</div>
+        <div>{productPriceFormatter(Math.round(data.total_amount * 0.01))}</div>
       </OrderCalculation>
 
       <OrderCalculation>
