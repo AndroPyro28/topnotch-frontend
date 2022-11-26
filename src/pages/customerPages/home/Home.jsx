@@ -45,7 +45,7 @@ function Home() {
 
           <Step>
             <img src="/images/appointmentIcon.png" alt="" />
-            <h3>Apointment</h3>
+            <h3>Appointment</h3>
             <p>
             Get an appointment now! 
             </p>
