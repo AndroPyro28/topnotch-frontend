@@ -167,7 +167,7 @@ function Signup() {
 
                     <FormikControl
                       name="confirmPassword"
-                      label="Comfirm Password"
+                      label="Confirm Password"
                       type="password"
                       control="input"
                       className="input__container"

@@ -26,7 +26,7 @@ function PaymentInfo() {
   useEffect(() => {
     (async () => {
       try {
-        dispatch(open());
+        // dispatch(open());
         setLoading(true)
         if (
           localStorage.getItem("onCheckoutProducts") == undefined ||
